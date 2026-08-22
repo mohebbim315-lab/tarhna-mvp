@@ -1,0 +1,3 @@
+export default function EditPage() {
+  return <main className="mx-auto max-w-4xl px-5 py-16"><h1 className="text-4xl font-black">ویرایش عکس</h1><p className="mt-3 text-zinc-400">نسخه MVP: آپلود عکس + توضیح تغییرات. اتصال پردازش واقعی در مرحله AI Provider انجام می‌شود.</p><div className="mt-8 rounded-3xl border border-dashed border-white/20 p-12 text-center"><div className="text-5xl">📷</div><p className="mt-4">عکس را اینجا آپلود کن</p><input className="mt-5" type="file" accept="image/*" /></div></main>;
+}

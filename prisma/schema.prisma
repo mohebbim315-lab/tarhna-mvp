@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum GenerationStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum GenerationType {
+  IMAGE
+  EDIT
+  LOGO
+  POSTER
+}
+
+model User {
+  id            String              @id @default(cuid())
+  phone         String              @unique
+  name          String?
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+  wallet        CreditWallet?
+  generations   Generation[]
+  payments      Payment[]
+  galleryPosts  GalleryPost[]
+  likes         GalleryLike[]
+  referralsSent Referral[]          @relation("referrer")
+  referralsRecv Referral[]          @relation("referred")
+}
+
+model CreditWallet {
+  id           String             @id @default(cuid())
+  userId       String             @unique
+  balance      Int                @default(50)
+  user         User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transactions CreditTransaction[]
+}
+
+model CreditTransaction {
+  id        String   @id @default(cuid())
+  walletId  String
+  amount    Int
+  reason    String
+  createdAt DateTime @default(now())
+  wallet    CreditWallet @relation(fields: [walletId], references: [id], onDelete: Cascade)
+}
+
+model Generation {
+  id          String           @id @default(cuid())
+  userId      String
+  prompt      String
+  enhanced   String?
+  type        GenerationType   @default(IMAGE)
+  quality     String           @default("standard")
+  status      GenerationStatus @default(PENDING)
+  createdAt   DateTime         @default(now())
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  outputs     GenerationOutput[]
+}
+
+model GenerationOutput {
+  id           String      @id @default(cuid())
+  generationId String
+  imageUrl     String
+  createdAt    DateTime    @default(now())
+  generation   Generation  @relation(fields: [generationId], references: [id], onDelete: Cascade)
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  userId    String
+  amount    Int
+  credits   Int
+  status    String   @default("pending")
+  authority String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model GalleryPost {
+  id          String       @id @default(cuid())
+  userId      String
+  imageUrl    String
+  caption     String?
+  likesCount  Int          @default(0)
+  createdAt   DateTime     @default(now())
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  likes       GalleryLike[]
+}
+
+model GalleryLike {
+  id        String      @id @default(cuid())
+  userId    String
+  postId    String
+  createdAt DateTime    @default(now())
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post      GalleryPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  @@unique([userId, postId])
+}
+
+model Referral {
+  id          String   @id @default(cuid())
+  referrerId  String
+  referredId  String   @unique
+  createdAt   DateTime @default(now())
+  referrer    User     @relation("referrer", fields: [referrerId], references: [id], onDelete: Cascade)
+  referred    User     @relation("referred", fields: [referredId], references: [id], onDelete: Cascade)
+}
