@@ -47,3 +47,128 @@ button { font: inherit; }
 
 @media (max-width: 900px){.nav{display:none}.topbar{justify-content:space-between}.hero{grid-template-columns:1fr;min-height:auto;padding-top:35px}.hero-copy{text-align:center;padding:0}.hero-copy p{margin-inline:auto}.hero-actions{justify-content:center}.hero-stage{height:400px}.creator{grid-template-columns:1fr}.creator-options{border-right:0;border-top:1px solid rgba(255,255,255,.07);padding:16px 0 0}.services{grid-template-columns:repeat(3,1fr)}.art-grid{grid-template-columns:repeat(3,1fr)}.market-grid{grid-template-columns:1fr}.packages{border-right:0;border-top:1px solid rgba(255,255,255,.07);padding:18px 0 0}.stats{grid-template-columns:repeat(2,1fr);gap:10px}.stats>div{border:0}.trust{grid-template-columns:repeat(3,1fr);gap:16px}.trust>div{border:0}.footer{grid-template-columns:1fr;text-align:center}.footer>div{justify-content:center}.footer small{grid-column:auto}}
 @media (max-width: 560px){.wrap{width:min(100% - 24px,1180px)}.topbar{height:62px;margin-top:10px;border-radius:17px}.brand{width:66px;height:48px;font-size:14px}.credits{display:none}.hero h1{font-size:40px;letter-spacing:-1px}.hero p{font-size:11px;line-height:2}.hero-stage{height:340px;transform:scale(.9)}.card-a{right:0}.card-b{left:0}.card-c{right:80px}.cube{width:130px;height:130px}.cube span{font-size:23px}.creator{padding:14px}.prompt-row{flex-direction:column}.prompt-submit{width:100%}.prompt-input{height:42px}.services{grid-template-columns:repeat(2,1fr)}.service-card{min-height:105px}.art-grid{grid-template-columns:repeat(2,1fr)}.art-image{height:180px}.prompt-products{grid-template-columns:repeat(2,1fr)}.package-list{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr 1fr}.stats b{font-size:12px}.stats small{font-size:7px}.trust{grid-template-columns:repeat(2,1fr)}.footer p{line-height:2}}
+
+/* ===== Tarhna Interactive 3D Cube ===== */
+
+.interactive-cube-area {
+  position: relative;
+  width: min(42vw, 560px);
+  height: min(42vw, 560px);
+  min-width: 320px;
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  perspective: 1100px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  z-index: 5;
+}
+
+.interactive-cube-area:active {
+  cursor: grabbing;
+}
+
+.interactive-cube {
+  --cube-size: clamp(180px, 22vw, 330px);
+  position: relative;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  transform-style: preserve-3d;
+  transition: transform 80ms linear;
+  z-index: 2;
+}
+
+.cube-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(129, 108, 255, 0.75);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(126,76,255,.30), transparent 45%),
+    linear-gradient(145deg, rgba(19,20,45,.97), rgba(5,7,20,.98));
+  box-shadow:
+    inset 0 0 40px rgba(77, 102, 255, .15),
+    0 0 25px rgba(120, 65, 255, .35);
+  backface-visibility: hidden;
+}
+
+.cube-face span {
+  font-size: clamp(28px, 4vw, 58px);
+  font-weight: 900;
+  color: #fff;
+  text-shadow:
+    0 0 15px rgba(255,255,255,.45),
+    0 0 32px rgba(121,75,255,.8);
+  pointer-events: none;
+}
+
+.cube-front {
+  transform: translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-back {
+  transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-right {
+  transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-left {
+  transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-top {
+  transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-bottom {
+  transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube-drag-label {
+  position: absolute;
+  top: 4%;
+  padding: 9px 16px;
+  border: 1px solid rgba(194, 118, 255, .4);
+  border-radius: 999px;
+  background: rgba(8, 7, 25, .68);
+  backdrop-filter: blur(12px);
+  color: #eee;
+  font-size: 12px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cube-floor-glow {
+  position: absolute;
+  width: 65%;
+  height: 15%;
+  bottom: 11%;
+  border-radius: 50%;
+  background: rgba(112, 64, 255, .42);
+  filter: blur(30px);
+  transform: rotateX(70deg);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .interactive-cube-area {
+    width: 100%;
+    height: 390px;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .interactive-cube {
+    --cube-size: 210px;
+  }
+
+  .cube-face {
+    border-radius: 18px;
+  }
+}

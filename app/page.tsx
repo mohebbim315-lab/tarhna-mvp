@@ -108,7 +108,7 @@ export default function Home() {
         <div className="creator-options">
           <div className="ratio-title">نسبت تصویر</div>
           <div className="ratios">
-            {['1:1','16:9','9:16','4:3'].map((x,i)=><div className={i===1?'ratio selected':'' || 'ratio'} key={x}><div className="ratio-box r-{i}"></div><span>{x}</span></div>)}
+            {['1:1','16:9','9:16','4:3'].map((x,i)=><div className={i === 1 ? 'ratio selected' : 'ratio'} key={x}><div className="ratio-box r-{i}"></div><span>{x}</span></div>)}
           </div>
           <div className="quality"><span>کیفیت خروجی</span><button>استاندارد</button><button className="selected">حرفه‌ای ✦</button></div>
         </div>
