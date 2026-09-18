@@ -1,0 +1,13 @@
+{
+  "/api/prompt/enhance/route": "/api/prompt/enhance",
+  "/_not-found/page": "/_not-found",
+  "/api/generate/route": "/api/generate",
+  "/page": "/",
+  "/edit/page": "/edit",
+  "/logo/page": "/logo",
+  "/create/page": "/create",
+  "/gallery/page": "/gallery",
+  "/prompts/page": "/prompts",
+  "/poster/page": "/poster",
+  "/dashboard/page": "/dashboard"
+}
