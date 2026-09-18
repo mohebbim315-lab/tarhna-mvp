@@ -46,21 +46,16 @@ function Brand({ dark = true }: { dark?: boolean }) {
     <div className="brand tarhna-brand">
       <img
         src="/images/tarhna-header-logo.png"
-        alt="Tarhna"
-        className="tarhna-brand-logo"
+        alt="طرحنا""
         draggable={false}
       />
+      <span className="tarhna-brand-en">Tarhna</span>
     </div>
   );
 }
 
 export default function Home() {
   const [dark, setDark] = useState(true);
-  const [ratio, setRatio] = useState("1:1");
-  const [prompt, setPrompt] = useState("");
-  const [style, setStyle] = useState("همه سبک‌ها");
-  const [quality, setQuality] = useState("pro");
-  const [count, setCount] = useState(2);
 
   return (
     <main className={dark ? "site dark" : "site light"}>
@@ -101,21 +96,24 @@ export default function Home() {
         <InteractiveCube />
       </div>
       </section>
+
       <section className="creator wrap glass-panel">
         <div className="creator-main">
           <h3>چه چیزی می‌خواهی بسازی؟</h3>
           <div className="prompt-row">
             <Link href="/create" className="prompt-submit"><Spark size={16} /> ساخت تصویر</Link>
-            <input className="prompt-input" type="text" value={prompt} onChange={(e)=>setPrompt(e.target.value)} placeholder="ایده‌ات را برای ساخت تصویر بنویس..." />
+            <div className="prompt-input">توضیح بده چه تصویری در ذهن داری...</div>
           </div>
-          <div className="chips">{["همه سبک‌ها ✦","سینمایی","فانتزی","هنری","فوتورئال","سه‌بعدی","مینیمال","تبلیغاتی"].map((x)=><button type="button" key={x} onClick={()=>setStyle(x)} className={style===x ? "selected" : ""}>{x}</button>)}</div>
+          <div className="chips">
+            {['همه سبک‌ها','فانتزی','سینمایی','هنری','فتورئال','سه‌بعدی','مینیمال','تبلیغاتی'].map((x,i)=><button key={x} className={i===0?'selected':''}>{x} {i===0?'✦':''}</button>)}
+          </div>
         </div>
         <div className="creator-options">
           <div className="ratio-title">نسبت تصویر</div>
           <div className="ratios">
-            {["1:1","4:5","3:4","2:3","9:16","16:9","3:2","4:3","21:9"].map((x)=><button type="button" key={x} onClick={()=>setRatio(x)} className={ratio===x ? "ratio selected" : "ratio"}><div className={"ratio-box r-"+x.replace(":","-")}></div><span>{x}</span></button>)}
+            {['1:1','16:9','9:16','4:3'].map((x,i)=><div className={i === 1 ? 'ratio selected' : 'ratio'} key={x}><div className="ratio-box r-{i}"></div><span>{x}</span></div>)}
           </div>
-          <div className="quality"><span>کیفیت خروجی</span><button type="button" onClick={()=>setQuality("standard")} className={quality==="standard" ? "selected" : ""}>استاندارد</button><button type="button" onClick={()=>setQuality("pro")} className={quality==="pro" ? "selected" : ""}>حرفه‌ای ✦</button></div>
+          <div className="quality"><span>کیفیت خروجی</span><button>استاندارد</button><button className="selected">حرفه‌ای ✦</button></div>
         </div>
       </section>
 

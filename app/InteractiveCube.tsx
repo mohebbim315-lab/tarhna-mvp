@@ -1,0 +1,68 @@
+"use client";
+
+import { useRef, useState } from "react";
+
+export default function InteractiveCube() {
+  const [rotation, setRotation] = useState({ x: -12, y: -28 });
+  const dragging = useRef(false);
+  const last = useRef({ x: 0, y: 0 });
+
+  function pointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    dragging.current = true;
+    last.current = { x: e.clientX, y: e.clientY };
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }
+
+  function pointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (!dragging.current) return;
+
+    const dx = e.clientX - last.current.x;
+    const dy = e.clientY - last.current.y;
+
+    setRotation((r) => ({
+      x: Math.max(-35, Math.min(35, r.x - dy * 0.18)),
+      y: r.y + dx * 0.25,
+    }));
+
+    last.current = { x: e.clientX, y: e.clientY };
+  }
+
+  function pointerUp() {
+    dragging.current = false;
+  }
+
+  return (
+    <div
+      className="interactive-cube-area"
+      onPointerDown={pointerDown}
+      onPointerMove={pointerMove}
+      onPointerUp={pointerUp}
+      onPointerCancel={pointerUp}
+      onDoubleClick={() => setRotation({ x: -12, y: -28 })}
+    >
+      <div
+        className="interactive-cube glass-cube"
+        style={{
+          transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+        }}
+      >
+        <div className="cube-face cube-front glass-face">
+          <img
+            className="cube-logo"
+            src="/images/tarhna-neon-logo.png"
+            alt="طرحنا"
+            draggable={false}
+          />
+        </div>
+
+        <div className="cube-face cube-back glass-face" />
+        <div className="cube-face cube-right glass-face" />
+        <div className="cube-face cube-left glass-face" />
+        <div className="cube-face cube-top glass-face" />
+        <div className="cube-face cube-bottom glass-face" />
+      </div>
+
+      <div className="cube-floor-glow" />
+    </div>
+  );
+}

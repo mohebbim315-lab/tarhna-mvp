@@ -754,9 +754,11 @@ button { font: inherit; }
     inset 4px 4px 12px rgba(255,255,255,.65),
     inset -4px -4px 14px rgba(91,68,255,.15),
     0 0 8px rgba(50,165,255,.28),
+    0 0 18px rgba(210,50,255,.16) !important;
 }
 
-/* ===== TARHNA CLEAN 3D CRYSTAL CUBE ===== */
+
+/* ===== TARHNA REAL 3D CRYSTAL CUBE ===== */
 
 .interactive-cube-area {
   --cube-size: 260px;
@@ -769,92 +771,83 @@ button { font: inherit; }
   align-items: center !important;
   justify-content: center !important;
 
-  perspective: 950px !important;
-  perspective-origin: 50% 42% !important;
-
+  perspective: 1000px !important;
+  perspective-origin: 50% 45% !important;
   touch-action: none;
 }
 
 .interactive-cube {
   position: relative !important;
-
   width: var(--cube-size) !important;
   height: var(--cube-size) !important;
 
   transform-style: preserve-3d !important;
   -webkit-transform-style: preserve-3d !important;
 
-  transition: transform .12s ease-out;
+  transition: transform .18s ease-out !important;
 }
 
-/* تمام ۶ وجه */
 .interactive-cube .cube-face {
   position: absolute !important;
-  inset: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
 
   width: var(--cube-size) !important;
   height: var(--cube-size) !important;
 
-  border-radius: 24px !important;
   overflow: hidden !important;
+  border-radius: 28px !important;
+
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
 
   background:
     linear-gradient(
       135deg,
-      rgba(255,255,255,.16),
-      rgba(110,150,255,.055) 38%,
-      rgba(130,60,255,.045) 70%,
-      rgba(255,255,255,.10)
+      rgba(255,255,255,.25),
+      rgba(86,112,255,.10) 35%,
+      rgba(128,42,220,.14) 70%,
+      rgba(255,255,255,.17)
     ) !important;
 
-  border: 2px solid rgba(165,210,255,.58) !important;
+  border: 2px solid rgba(190,220,255,.62) !important;
 
   box-shadow:
-    inset 5px 5px 14px rgba(255,255,255,.18),
-    inset -5px -5px 16px rgba(80,40,255,.10),
-    0 0 12px rgba(0,190,255,.22),
-    0 0 24px rgba(210,35,255,.13) !important;
+    inset 5px 5px 16px rgba(255,255,255,.22),
+    inset -5px -5px 18px rgba(58,50,210,.18),
+    inset 0 0 35px rgba(67,138,255,.10),
+    0 0 8px rgba(255,255,255,.30),
+    0 0 18px rgba(37,168,255,.26),
+    0 0 26px rgba(220,39,255,.18) !important;
 
-  backface-visibility: visible !important;
-  -webkit-backface-visibility: visible !important;
+  backdrop-filter: blur(5px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(145%) !important;
 }
 
-/* جای واقعی شش وجه در فضای سه‌بعدی */
+/* شش وجه واقعی مکعب */
 
 .interactive-cube .cube-front {
-  transform:
-    rotateY(0deg)
-    translateZ(var(--cube-half)) !important;
+  transform: rotateY(0deg) translateZ(var(--cube-half)) !important;
 }
 
 .interactive-cube .cube-back {
-  transform:
-    rotateY(180deg)
-    translateZ(var(--cube-half)) !important;
+  transform: rotateY(180deg) translateZ(var(--cube-half)) !important;
 }
 
 .interactive-cube .cube-right {
-  transform:
-    rotateY(90deg)
-    translateZ(var(--cube-half)) !important;
+  transform: rotateY(90deg) translateZ(var(--cube-half)) !important;
 }
 
 .interactive-cube .cube-left {
-  transform:
-    rotateY(-90deg)
-    translateZ(var(--cube-half)) !important;
+  transform: rotateY(-90deg) translateZ(var(--cube-half)) !important;
 }
 
 .interactive-cube .cube-top {
-  transform:
-    rotateX(90deg)
-    translateZ(var(--cube-half)) !important;
+  transform: rotateX(90deg) translateZ(var(--cube-half)) !important;
 }
 
 .interactive-cube .cube-bottom {
-  transform:
-    rotateX(-90deg)
-    translateZ(var(--cube-half)) !important;
+  transform: rotateX(-90deg) translateZ(var(--cube-half)) !important;
 }
 
 /* لوگو فقط روی وجه جلو */
@@ -866,14 +859,13 @@ button { font: inherit; }
 }
 
 .interactive-cube .cube-logo {
-  width: 70% !important;
+  width: 72% !important;
   height: auto !important;
   object-fit: contain !important;
 
   filter:
-    drop-shadow(0 4px 6px rgba(255,255,255,.25))
-    drop-shadow(0 6px 12px rgba(0,190,255,.65))
-    drop-shadow(0 8px 18px rgba(225,35,255,.55)) !important;
+    drop-shadow(0 0 5px rgba(0,190,255,.75))
+    drop-shadow(0 0 10px rgba(225,35,255,.65)) !important;
 }
 
 /* نوشته‌های بقیه وجه‌ها فعلاً مخفی */
@@ -892,101 +884,174 @@ button { font: inherit; }
 /* موبایل */
 
 @media (max-width: 700px) {
+
   .interactive-cube-area {
     --cube-size: 230px;
     --cube-half: 115px;
 
-    height: 370px !important;
-    perspective: 850px !important;
+    height: 360px !important;
+    perspective: 900px !important;
+  }
+
+  .interactive-cube {
+    width: var(--cube-size) !important;
+    height: var(--cube-size) !important;
   }
 }
 
+/* ===== TARHNA CRYSTAL CUBE FINAL ===== */
 
-/* ===== TARHNA CUBE SIDE DEPTH ===== */
-
-.interactive-cube .cube-right {
-  background: linear-gradient(
-    145deg,
-    rgba(40, 180, 255, .24),
-    rgba(105, 55, 255, .18) 48%,
-    rgba(235, 40, 255, .20)
-  ) !important;
-
-  border: 2px solid rgba(90, 205, 255, .72) !important;
-
-  box-shadow:
-    inset 8px 0 20px rgba(0, 190, 255, .20),
-    inset -5px 0 18px rgba(225, 40, 255, .16),
-    0 0 22px rgba(70, 170, 255, .22) !important;
+.interactive-cube-area {
+  --cube-size: 300px !important;
+  --cube-half: 150px !important;
+  perspective: 1100px !important;
+  perspective-origin: 50% 42% !important;
 }
 
-.interactive-cube .cube-top {
-  background: linear-gradient(
-    160deg,
-    rgba(255,255,255,.30),
-    rgba(90,180,255,.18) 45%,
-    rgba(190,60,255,.16)
-  ) !important;
-
-  border: 2px solid rgba(190,225,255,.75) !important;
-
-  box-shadow:
-    inset 0 6px 16px rgba(255,255,255,.25),
-    0 0 20px rgba(120,170,255,.22) !important;
+.interactive-cube {
+  width: var(--cube-size) !important;
+  height: var(--cube-size) !important;
+  position: relative !important;
+  transform-style: preserve-3d !important;
+  -webkit-transform-style: preserve-3d !important;
 }
 
-/* لبه‌های نورانی برای تشخیص بهتر عمق */
-.interactive-cube .cube-right::after,
-.interactive-cube .cube-top::after {
-  content: "";
-  position: absolute;
-  inset: 5px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.18);
-  pointer-events: none;
-}
+.interactive-cube .cube-face {
+  position: absolute !important;
+  width: var(--cube-size) !important;
+  height: var(--cube-size) !important;
 
-
-/* ===== TARHNA CUBE REAL DEPTH V2 ===== */
-
-/* وجه راست: کمی تیره‌تر و آبی‌تر تا عمق خوانا شود */
-.interactive-cube .cube-right {
+  /* شیشه شفاف */
   background:
     linear-gradient(
-      90deg,
-      rgba(80, 210, 255, .28) 0%,
-      rgba(70, 110, 255, .18) 45%,
-      rgba(185, 55, 255, .24) 100%
+      135deg,
+      rgba(255,255,255,.13) 0%,
+      rgba(80,170,255,.045) 30%,
+      rgba(150,60,255,.035) 65%,
+      rgba(255,255,255,.09) 100%
     ) !important;
 
-  border: 2px solid rgba(110, 215, 255, .78) !important;
+  /* مهم: مات‌کنندگی حذف شود */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  border: 2px solid rgba(170,220,255,.55) !important;
+  border-radius: 22px !important;
 
   box-shadow:
-    inset 10px 0 22px rgba(40, 210, 255, .22),
-    inset -8px 0 20px rgba(220, 45, 255, .18),
-    0 0 22px rgba(60, 175, 255, .22) !important;
+    inset 0 0 12px rgba(255,255,255,.16),
+    inset 2px 2px 5px rgba(255,255,255,.30),
+    inset -2px -2px 8px rgba(110,40,255,.12),
+    0 0 8px rgba(0,190,255,.35),
+    0 0 18px rgba(105,70,255,.20) !important;
+
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
 }
 
-/* وجه بالا: روشن‌تر برای ایجاد حس کریستال */
-.interactive-cube .cube-top {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.36) 0%,
-      rgba(125,190,255,.22) 45%,
-      rgba(190,80,255,.18) 100%
-    ) !important;
+/* شش وجه واقعی مکعب */
 
-  border: 2px solid rgba(205,235,255,.82) !important;
-
-  box-shadow:
-    inset 0 8px 18px rgba(255,255,255,.28),
-    0 0 20px rgba(115,185,255,.24) !important;
-}
-
-/* لبه مشترک جلو و وجه‌ها */
 .interactive-cube .cube-front {
-  border-right-color: rgba(85,205,255,.88) !important;
-  border-top-color: rgba(215,235,255,.82) !important;
+  transform: rotateY(0deg) translateZ(var(--cube-half)) !important;
+}
+
+.interactive-cube .cube-back {
+  transform: rotateY(180deg) translateZ(var(--cube-half)) !important;
+}
+
+.interactive-cube .cube-right {
+  transform: rotateY(90deg) translateZ(var(--cube-half)) !important;
+}
+
+.interactive-cube .cube-left {
+  transform: rotateY(-90deg) translateZ(var(--cube-half)) !important;
+}
+
+.interactive-cube .cube-top {
+  transform: rotateX(90deg) translateZ(var(--cube-half)) !important;
+}
+
+.interactive-cube .cube-bottom {
+  transform: rotateX(-90deg) translateZ(var(--cube-half)) !important;
+}
+
+/* فقط لوگوی طرحنا روی وجه جلو */
+
+.interactive-cube .cube-front {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.interactive-cube .cube-logo {
+  width: 70% !important;
+  height: auto !important;
+  object-fit: contain !important;
+
+  filter:
+    drop-shadow(0 0 5px rgba(0,190,255,.8))
+    drop-shadow(0 0 10px rgba(220,30,255,.65)) !important;
+}
+
+/* موبایل */
+
+@media (max-width: 700px) {
+  .interactive-cube-area {
+    --cube-size: 250px !important;
+    --cube-half: 125px !important;
+    height: 360px !important;
+    perspective: 900px !important;
+  }
+}
+/* ===== TARHNA CRYSTAL CUBE - VISIBLE SIDES ===== */
+
+/* وجه راست */
+.interactive-cube .cube-right {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 150, 255, .10),
+      rgba(95, 45, 210, .06) 45%,
+      rgba(220, 40, 255, .10)
+    ) !important;
+
+  border: 2px solid rgba(80, 190, 255, .62) !important;
+
+  box-shadow:
+    inset 4px 0 10px rgba(0, 190, 255, .15),
+    inset -4px 0 12px rgba(220, 40, 255, .12),
+    0 0 10px rgba(0, 180, 255, .28),
+    0 0 20px rgba(180, 30, 255, .15) !important;
+}
+
+/* سطح بالای مکعب */
+.interactive-cube .cube-top {
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, .14),
+      rgba(70, 180, 255, .07) 45%,
+      rgba(180, 60, 255, .08)
+    ) !important;
+
+  border: 2px solid rgba(180, 220, 255, .60) !important;
+
+  box-shadow:
+    inset 0 3px 10px rgba(255, 255, 255, .20),
+    0 0 12px rgba(80, 180, 255, .25),
+    0 0 20px rgba(200, 40, 255, .12) !important;
+}
+
+/* خط اتصال گوشه‌های کریستال */
+.interactive-cube .cube-right,
+.interactive-cube .cube-top {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* عمق بیشتر هنگام نمایش سه وجه */
+.interactive-cube-area {
+  perspective: 800px !important;
+  perspective-origin: 50% 40% !important;
 }
 
