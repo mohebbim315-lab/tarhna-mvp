@@ -1,0 +1,1618 @@
+"use client";
+
+import Link from "next/link";
+
+const services = [
+  {
+    icon: "✦",
+    title: "طراحی اختصاصی",
+    text: "پوستر، کاور، بنر، لوگو و طرح‌های اختصاصی متناسب با نیاز شما",
+    href: "/create",
+  },
+  {
+    icon: "◈",
+    title: "نمونه‌کارهای طرحنا",
+    text: "منتخبی از پروژه‌ها و طراحی‌های انجام‌شده در استودیوی طرحنا",
+    href: "/gallery",
+  },
+  {
+    icon: "▣",
+    title: "فروشگاه فایل",
+    text: "پک‌های آماده، قالب‌ها و پوسترهای لایه‌باز برای طراحان و تولیدکنندگان محتوا",
+    href: "#shop",
+  },
+  {
+    icon: "◇",
+    title: "مارکت طراحان",
+    text: "طرح خودت را منتشر کن، بفروش و از مهارتت درآمد کسب کن",
+    href: "#market",
+  },
+];
+
+const works = [
+  { title: "پوستر سینمایی", type: "Poster", icon: "◐" },
+  { title: "کاور شبکه اجتماعی", type: "Social", icon: "✦" },
+  { title: "هویت بصری", type: "Branding", icon: "◇" },
+  { title: "پوستر مذهبی", type: "Poster", icon: "◈" },
+];
+
+const products = [
+  { title: "پک قالب پست حرفه‌ای", price: "۸۹,۰۰۰", icon: "▦" },
+  { title: "مجموعه پوستر لایه‌باز", price: "۱۲۹,۰۰۰", icon: "◫" },
+  { title: "پک استوری مدرن", price: "۶۹,۰۰۰", icon: "▤" },
+];
+
+const reviews = [
+  {
+    name: "مهدی رضایی",
+    role: "تولیدکننده محتوا",
+    text: "کیفیت طراحی و توجه به جزئیات واقعاً عالی بود. دقیقاً چیزی شد که برای پیجم می‌خواستم.",
+  },
+  {
+    name: "سارا احمدی",
+    role: "مدیر کسب‌وکار",
+    text: "سفارش خیلی منظم انجام شد و نتیجه نهایی از چیزی که تصور می‌کردم حرفه‌ای‌تر بود.",
+  },
+  {
+    name: "علی محمدی",
+    role: "طراح گرافیک",
+    text: "بخش فروش فایل و مارکت طراحان ایده خیلی خوبی است؛ مخصوصاً برای فروش طرح‌های آماده.",
+  },
+];
+
+export default function Home() {
+  return (
+    <main className="site" dir="rtl">
+      <header className="header">
+        <div className="nav-shell">
+          <Link href="/" className="brand">
+            <div className="brand-mark">ط</div>
+            <div>
+              <strong>طرحنا</strong>
+              <small>Tarhna Creative</small>
+            </div>
+          </Link>
+
+          <nav>
+            <a href="#services">خدمات</a>
+            <a href="#portfolio">نمونه‌کارها</a>
+            <a href="#shop">فروشگاه</a>
+            <a href="#market">مارکت طراحان</a>
+          </nav>
+
+          <div className="header-actions">
+            <button className="search" aria-label="جستجو">⌕</button>
+            <Link href="/dashboard" className="account">حساب من</Link>
+          </div>
+        </div>
+      </header>
+
+      <section className="hero">
+        <div className="hero-copy">
+          <span className="eyebrow">✦ استودیوی طراحی و مارکت خلاقیت</span>
+
+          <h1>
+            ایده‌ات را به یک
+            <span> طراحی متفاوت </span>
+            تبدیل کن
+          </h1>
+
+          <p>
+            از سفارش طراحی اختصاصی تا خرید و فروش فایل‌های گرافیکی؛
+            طرحنا جایی برای تبدیل ایده‌ها به طراحی‌های حرفه‌ای است.
+          </p>
+
+          <div className="hero-buttons">
+            <Link href="/create" className="primary">
+              ثبت سفارش طراحی
+              <b>←</b>
+            </Link>
+            <a href="#portfolio" className="secondary">
+              مشاهده نمونه‌کارها
+            </a>
+          </div>
+
+          <div className="trust-row">
+            <div><b>+۱۰۰</b><span>پروژه خلاقانه</span></div>
+            <div><b>۴.۹</b><span>رضایت مشتریان</span></div>
+            <div><b>۲۴/۷</b><span>ثبت سفارش</span></div>
+          </div>
+        </div>
+
+        <div className="hero-visual">
+          <div className="glow glow-a"></div>
+          <div className="glow glow-b"></div>
+
+          <div className="device">
+            <div className="device-top">
+              <i></i><i></i><i></i>
+            </div>
+
+            <div className="screen">
+              <div className="screen-logo">طرحنا</div>
+              <span>CREATIVE MARKET</span>
+              <small>DESIGN • CREATE • SELL</small>
+            </div>
+
+            <div className="platform"></div>
+          </div>
+
+          <div className="float-card card-one">
+            <span>✦</span>
+            <b>طراحی اختصاصی</b>
+            <small>سفارش مستقیم</small>
+          </div>
+
+          <div className="float-card card-two">
+            <span>◈</span>
+            <b>فایل آماده</b>
+            <small>دانلود فوری</small>
+          </div>
+
+          <div className="float-card card-three">
+            <span>◇</span>
+            <b>مارکت طراحان</b>
+            <small>فروش و درآمد</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="services-section" id="services">
+        <div className="section-head">
+          <div>
+            <span>خدمات طرحنا</span>
+            <h2>همه‌چیز برای یک طراحی حرفه‌ای</h2>
+          </div>
+          <p>از ایده تا خروجی نهایی، همه‌چیز در یک پلتفرم خلاق</p>
+        </div>
+
+        <div className="services-grid">
+          {services.map((item) => (
+            <Link href={item.href} className="service-card" key={item.title}>
+              <div className="service-icon">{item.icon}</div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <span className="card-action">مشاهده بیشتر ←</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="portfolio-section" id="portfolio">
+        <div className="section-head row">
+          <div>
+            <span>نمونه‌کارهای منتخب</span>
+            <h2>بخشی از دنیای طراحی طرحنا</h2>
+            <p>نمونه‌ای از پروژه‌ها و سبک‌های مختلف طراحی</p>
+          </div>
+          <Link href="/gallery" className="outline-btn">
+            مشاهده همه نمونه‌کارها ←
+          </Link>
+        </div>
+
+        <div className="portfolio-grid">
+          {works.map((work, index) => (
+            <article className={`portfolio-card work-${index + 1}`} key={work.title}>
+              <div className="portfolio-art">
+                <div className="art-orb"></div>
+                <div className="art-grid"></div>
+                <span className="art-icon">{work.icon}</span>
+                <strong>طرحنا</strong>
+              </div>
+
+              <div className="portfolio-info">
+                <div>
+                  <small>{work.type}</small>
+                  <h3>{work.title}</h3>
+                </div>
+                <span>↗</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="shop-section" id="shop">
+        <div className="section-head">
+          <div>
+            <span>فروشگاه طرحنا</span>
+            <h2>فایل‌های آماده برای طراح‌های حرفه‌ای</h2>
+          </div>
+          <p>قالب‌ها، پک‌ها و فایل‌های گرافیکی آماده برای دانلود</p>
+        </div>
+
+        <div className="product-grid">
+          {products.map((product, index) => (
+            <article className="product-card" key={product.title}>
+              <div className={`product-preview product-${index + 1}`}>
+                <span>{product.icon}</span>
+                <small>PREMIUM DESIGN</small>
+              </div>
+
+              <div className="product-body">
+                <span className="product-tag">فایل آماده</span>
+                <h3>{product.title}</h3>
+
+                <div className="product-bottom">
+                  <div>
+                    <small>قیمت</small>
+                    <b>{product.price} تومان</b>
+                  </div>
+                  <button>مشاهده</button>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="seller-section" id="market">
+        <div className="seller-copy">
+          <span>مارکت طراحان طرحنا</span>
+          <h2>
+            طراحی می‌کنی؟
+            <br />
+            <strong>از خلاقیتت درآمد بساز.</strong>
+          </h2>
+
+          <p>
+            فایل‌ها و طرح‌های خودت را در طرحنا برای فروش قرار بده.
+            با هر فروش، سهم فروشنده به کیف پولت اضافه می‌شود و طرحنا
+            فقط درصد مشخصی از فروش را به‌عنوان کمیسیون دریافت می‌کند.
+          </p>
+
+          <div className="seller-features">
+            <div><i>✓</i><span>صفحه اختصاصی فروشنده</span></div>
+            <div><i>✓</i><span>مدیریت محصولات و فروش‌ها</span></div>
+            <div><i>✓</i><span>درآمد از هر فروش</span></div>
+            <div><i>✓</i><span>تسویه حساب شفاف</span></div>
+          </div>
+
+          <button className="primary seller-btn">
+            شروع فروش در طرحنا
+            <b>←</b>
+          </button>
+        </div>
+
+        <div className="seller-visual">
+          <div className="seller-glow"></div>
+
+          <div className="seller-dashboard">
+            <div className="dash-top">
+              <div>
+                <small>پنل فروشنده</small>
+                <strong>داشبورد من</strong>
+              </div>
+              <span>◈</span>
+            </div>
+
+            <div className="income-card">
+              <small>درآمد این ماه</small>
+              <strong>۱۲,۸۵۰,۰۰۰</strong>
+              <span>تومان</span>
+            </div>
+
+            <div className="mini-stats">
+              <div><b>۲۸</b><small>فروش</small></div>
+              <div><b>۱۲</b><small>محصول</small></div>
+              <div><b>۴.۹</b><small>امتیاز</small></div>
+            </div>
+
+            <div className="chart">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="reviews-section">
+        <div className="section-head reviews-title">
+          <div>
+            <span>نظر کاربران</span>
+            <h2>تجربه کسانی که طرحنا را انتخاب کرده‌اند</h2>
+          </div>
+          <p>اعتماد شما مهم‌ترین بخش مسیر ماست</p>
+        </div>
+
+        <div className="reviews-grid">
+          {reviews.map((review, index) => (
+            <article className="review-card" key={review.name}>
+              <div className="quote">“</div>
+              <div className="stars">★★★★★</div>
+              <p>{review.text}</p>
+
+              <div className="review-user">
+                <div className={`avatar avatar-${index + 1}`}>
+                  {review.name.charAt(0)}
+                </div>
+                <div>
+                  <strong>{review.name}</strong>
+                  <small>{review.role}</small>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="order-cta">
+        <div className="cta-glow"></div>
+        <span>✦ آماده‌ای ایده‌ات را واقعی کنیم؟</span>
+        <h2>پروژه بعدی می‌تواند پروژه تو باشد.</h2>
+        <p>
+          جزئیات سفارشت را برای ما بفرست؛ طراحی انجام می‌شود و نتیجه نهایی
+          از طریق حساب کاربری تحویلت داده خواهد شد.
+        </p>
+        <Link href="/create" className="primary">
+          ثبت سفارش جدید
+          <b>←</b>
+        </Link>
+      </section>
+
+      <footer>
+        <div className="footer-brand">
+          <div className="brand-mark">ط</div>
+          <div>
+            <strong>طرحنا</strong>
+            <p>استودیوی طراحی و مارکت خلاقیت</p>
+          </div>
+        </div>
+
+        <div className="footer-links">
+          <a href="#services">خدمات</a>
+          <a href="#portfolio">نمونه‌کارها</a>
+          <a href="#shop">فروشگاه</a>
+          <a href="#market">فروشنده شو</a>
+        </div>
+
+        <div className="copyright">
+          © ۱۴۰۵ طرحنا — تمامی حقوق محفوظ است.
+        </div>
+      </footer>
+
+
+      <style jsx global>{`
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{margin:0;background:#03050d;color:#fff}
+        button,input{font:inherit}
+        a{text-decoration:none;color:inherit}
+
+        .site{
+          min-height:100vh;
+          overflow:hidden;
+          font-family:Arial,Tahoma,sans-serif;
+          background:
+            radial-gradient(circle at 80% 8%,rgba(37,99,235,.16),transparent 24%),
+            radial-gradient(circle at 15% 18%,rgba(217,70,239,.13),transparent 24%),
+            linear-gradient(180deg,#03050d 0%,#080512 48%,#03050d 100%);
+        }
+
+        .header{
+          position:sticky;
+          top:0;
+          z-index:50;
+          border-bottom:1px solid rgba(255,255,255,.08);
+          background:rgba(3,5,13,.76);
+          backdrop-filter:blur(22px);
+        }
+
+        .nav-shell{
+          width:min(1420px,94%);
+          height:82px;
+          margin:auto;
+          display:grid;
+          grid-template-columns:220px 1fr 220px;
+          align-items:center;
+          gap:25px;
+        }
+
+        .brand{
+          display:flex;
+          align-items:center;
+          gap:11px;
+          justify-self:start;
+        }
+
+        .brand-mark{
+          width:52px;
+          height:52px;
+          border-radius:16px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-size:25px;
+          font-weight:900;
+          background:linear-gradient(145deg,#ec4899,#7c3aed 52%,#2563eb);
+          border:1px solid rgba(255,255,255,.22);
+          box-shadow:0 0 28px rgba(139,92,246,.35);
+        }
+
+        .brand strong{display:block;font-size:20px}
+        .brand small{display:block;color:#777;margin-top:3px;font-size:9px}
+
+        nav{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          gap:34px;
+        }
+
+        nav a{
+          color:#aeb4c8;
+          font-size:14px;
+          transition:.25s;
+        }
+
+        nav a:hover{color:#fff}
+
+        .header-actions{
+          display:flex;
+          gap:9px;
+          justify-content:flex-end;
+        }
+
+        .search,.account{
+          min-height:43px;
+          border-radius:14px;
+          border:1px solid rgba(255,255,255,.13);
+          background:rgba(255,255,255,.04);
+          color:#fff;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+        }
+
+        .search{
+          width:43px;
+          font-size:24px;
+          cursor:pointer;
+        }
+
+        .account{
+          padding:0 18px;
+          font-size:13px;
+        }
+
+        .hero{
+          width:min(1420px,94%);
+          min-height:650px;
+          margin:auto;
+          display:grid;
+          grid-template-columns:1fr 1.05fr;
+          align-items:center;
+          gap:45px;
+          padding:70px 0;
+          position:relative;
+        }
+
+        .hero-copy{
+          position:relative;
+          z-index:5;
+        }
+
+        .eyebrow{
+          display:inline-flex;
+          padding:9px 16px;
+          border-radius:999px;
+          border:1px solid rgba(217,70,239,.28);
+          background:rgba(168,85,247,.09);
+          color:#d8b4fe;
+          font-size:13px;
+        }
+
+        .hero h1{
+          font-size:clamp(44px,5vw,77px);
+          line-height:1.35;
+          margin:24px 0 18px;
+          font-weight:900;
+          letter-spacing:-2px;
+          max-width:700px;
+        }
+
+        .hero h1 span{
+          background:linear-gradient(90deg,#ec4899,#8b5cf6,#3b82f6);
+          -webkit-background-clip:text;
+          color:transparent;
+          filter:drop-shadow(0 0 22px rgba(139,92,246,.2));
+        }
+
+        .hero-copy>p{
+          color:#9ca3b6;
+          line-height:2.1;
+          max-width:620px;
+          font-size:16px;
+        }
+
+        .hero-buttons{
+          display:flex;
+          gap:14px;
+          margin-top:30px;
+        }
+
+        .primary,.secondary,.outline-btn{
+          min-height:52px;
+          padding:0 22px;
+          border-radius:15px;
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          gap:15px;
+          transition:.25s;
+        }
+
+        .primary{
+          color:white;
+          border:1px solid rgba(255,255,255,.18);
+          background:linear-gradient(100deg,#7c3aed,#2563eb);
+          box-shadow:0 12px 40px rgba(79,70,229,.25);
+        }
+
+        .primary:hover{transform:translateY(-3px)}
+        .primary b{font-size:20px}
+
+        .secondary,.outline-btn{
+          color:#d7d9e4;
+          border:1px solid rgba(255,255,255,.13);
+          background:rgba(255,255,255,.035);
+        }
+
+        .trust-row{
+          display:flex;
+          gap:35px;
+          margin-top:42px;
+        }
+
+        .trust-row div{
+          display:flex;
+          flex-direction:column;
+          gap:5px;
+        }
+
+        .trust-row b{font-size:20px}
+        .trust-row span{font-size:11px;color:#73798b}
+
+        .hero-visual{
+          height:540px;
+          position:relative;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          perspective:1000px;
+        }
+
+        .glow{
+          position:absolute;
+          border-radius:50%;
+          filter:blur(80px);
+          pointer-events:none;
+        }
+
+        .glow-a{
+          width:310px;
+          height:310px;
+          background:rgba(124,58,237,.24);
+          left:18%;
+          top:10%;
+        }
+
+        .glow-b{
+          width:270px;
+          height:270px;
+          background:rgba(37,99,235,.19);
+          right:4%;
+          bottom:4%;
+        }
+
+        .device{
+          width:min(500px,82%);
+          height:330px;
+          border-radius:27px;
+          padding:15px;
+          position:relative;
+          z-index:4;
+          transform:rotateY(-8deg) rotateX(3deg);
+          background:linear-gradient(145deg,#15182c,#070914);
+          border:1px solid rgba(129,140,248,.5);
+          box-shadow:
+            0 0 40px rgba(255,255,255,.02),
+            0 0 70px rgba(37,99,235,.20),
+            0 0 110px rgba(217,70,239,.12);
+        }
+
+        .device-top{
+          height:7px;
+          width:65px;
+          border-radius:10px;
+          background:#20243c;
+          margin:0 auto 9px;
+        }
+
+        .screen{
+          height:275px;
+          border-radius:16px;
+          border:1px solid rgba(168,85,247,.28);
+          background:
+            radial-gradient(circle at center,rgba(99,102,241,.18),transparent 45%),
+            #040610;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          box-shadow:inset 0 0 45px rgba(59,130,246,.08);
+        }
+
+        .screen-logo{
+          font-size:54px;
+          font-weight:900;
+          background:linear-gradient(90deg,#f0abfc,#818cf8,#38bdf8);
+          -webkit-background-clip:text;
+          color:transparent;
+          filter:drop-shadow(0 0 22px #7c3aed);
+        }
+
+        .screen span{
+          font-size:12px;
+          color:#aeb4c8;
+          margin-top:12px;
+          letter-spacing:4px;
+        }
+
+        .screen small{
+          color:#788198;
+          margin-top:8px;
+          font-size:9px;
+        }
+
+        .platform{
+          position:absolute;
+          width:540px;
+          max-width:110%;
+          height:80px;
+          border-radius:50%;
+          bottom:-45px;
+          left:50%;
+          transform:translateX(-50%);
+          background:radial-gradient(ellipse,rgba(139,92,246,.34),rgba(37,99,235,.08) 45%,transparent 72%);
+          border-bottom:2px solid rgba(168,85,247,.35);
+          filter:blur(.2px);
+        }
+
+        .float-card{
+          position:absolute;
+          z-index:8;
+          width:150px;
+          min-height:112px;
+          border-radius:19px;
+          border:1px solid rgba(255,255,255,.14);
+          background:linear-gradient(145deg,rgba(20,23,42,.88),rgba(15,23,42,.55));
+          backdrop-filter:blur(15px);
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          box-shadow:0 15px 40px rgba(0,0,0,.35);
+        }
+
+        .float-card span{
+          font-size:34px;
+          color:#c084fc;
+          text-shadow:0 0 18px #7c3aed;
+        }
+
+        .float-card b{
+          font-size:12px;
+          margin-top:8px;
+        }
+
+        .float-card small{
+          color:#8b91a5;
+          margin-top:5px;
+          font-size:9px;
+        }
+
+        .card-one{
+          right:2%;
+          top:7%;
+          transform:rotate(8deg);
+        }
+
+        .card-two{
+          left:0;
+          bottom:16%;
+          transform:rotate(-7deg);
+        }
+
+        .card-three{
+          left:11%;
+          top:7%;
+          transform:rotate(-5deg);
+        }
+
+        .services-section,
+        .portfolio-section,
+        .shop-section,
+        .reviews-section{
+          width:min(1420px,94%);
+          margin:0 auto;
+          padding:85px 0;
+        }
+
+        .services-section{
+          border-top:1px solid rgba(255,255,255,.06);
+        }
+
+        .section-head{
+          margin-bottom:34px;
+        }
+
+        .section-head.row{
+          display:flex;
+          justify-content:space-between;
+          align-items:flex-end;
+          gap:25px;
+        }
+
+        .section-head span{
+          color:#c084fc;
+          font-size:13px;
+        }
+
+        .section-head h2{
+          font-size:34px;
+          margin:9px 0;
+          letter-spacing:-1px;
+        }
+
+        .section-head p{
+          color:#747d91;
+          margin:0;
+          line-height:1.9;
+        }
+
+        .services-grid{
+          display:grid;
+          grid-template-columns:repeat(4,1fr);
+          gap:18px;
+          margin-top:42px;
+        }
+
+        .service-card{
+          min-height:270px;
+          padding:27px;
+          border-radius:22px;
+          position:relative;
+          overflow:hidden;
+          border:1px solid rgba(99,102,241,.24);
+          background:
+            radial-gradient(circle at 50% 0%,rgba(99,102,241,.11),transparent 45%),
+            rgba(8,12,26,.8);
+          transition:.3s;
+        }
+
+        .service-card:before{
+          content:"";
+          position:absolute;
+          inset:auto 20% -60px;
+          width:60%;
+          height:100px;
+          background:#7c3aed;
+          filter:blur(70px);
+          opacity:.12;
+        }
+
+        .service-card:hover{
+          transform:translateY(-7px);
+          border-color:rgba(168,85,247,.58);
+          box-shadow:0 20px 60px rgba(0,0,0,.3);
+        }
+
+        .service-icon{
+          width:60px;
+          height:60px;
+          border-radius:17px;
+          background:linear-gradient(145deg,#172554,#581c87);
+          border:1px solid rgba(192,132,252,.28);
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-size:28px;
+          box-shadow:0 0 25px rgba(124,58,237,.2);
+        }
+
+        .service-card h3{
+          font-size:19px;
+          margin:22px 0 10px;
+        }
+
+        .service-card p{
+          color:#7f879a;
+          line-height:1.9;
+          font-size:13px;
+          min-height:75px;
+        }
+
+        .card-action{
+          color:#c4b5fd;
+          font-size:12px;
+        }
+
+        .portfolio-section{
+          border-top:1px solid rgba(255,255,255,.06);
+        }
+
+        .portfolio-grid{
+          display:grid;
+          grid-template-columns:repeat(4,1fr);
+          gap:17px;
+        }
+
+        .portfolio-card{
+          border-radius:22px;
+          overflow:hidden;
+          border:1px solid rgba(255,255,255,.09);
+          background:#080b16;
+          transition:.3s;
+        }
+
+        .portfolio-card:hover{
+          transform:translateY(-6px);
+          border-color:rgba(139,92,246,.5);
+        }
+
+        .portfolio-art{
+          height:280px;
+          position:relative;
+          overflow:hidden;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          background:
+            radial-gradient(circle at 35% 30%,rgba(236,72,153,.24),transparent 35%),
+            radial-gradient(circle at 70% 70%,rgba(37,99,235,.28),transparent 38%),
+            linear-gradient(145deg,#111329,#050710);
+        }
+
+        .work-2 .portfolio-art{
+          background:
+            radial-gradient(circle at 70% 25%,rgba(14,165,233,.3),transparent 35%),
+            radial-gradient(circle at 25% 75%,rgba(124,58,237,.3),transparent 40%),
+            #060916;
+        }
+
+        .work-3 .portfolio-art{
+          background:
+            radial-gradient(circle at 50% 45%,rgba(217,70,239,.27),transparent 35%),
+            linear-gradient(145deg,#14091d,#060710);
+        }
+
+        .work-4 .portfolio-art{
+          background:
+            radial-gradient(circle at 50% 30%,rgba(245,158,11,.19),transparent 30%),
+            radial-gradient(circle at 50% 70%,rgba(99,102,241,.25),transparent 42%),
+            #070813;
+        }
+
+        .art-grid{
+          position:absolute;
+          inset:0;
+          opacity:.12;
+          background-image:
+            linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),
+            linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);
+          background-size:28px 28px;
+          transform:perspective(500px) rotateX(55deg) scale(1.4);
+        }
+
+        .art-orb{
+          position:absolute;
+          width:130px;
+          height:130px;
+          border-radius:50%;
+          background:linear-gradient(145deg,#ec4899,#4f46e5,#38bdf8);
+          filter:blur(1px);
+          box-shadow:0 0 70px rgba(124,58,237,.5);
+        }
+
+        .art-icon{
+          position:relative;
+          z-index:3;
+          font-size:68px;
+          color:white;
+          text-shadow:0 0 30px #c084fc;
+        }
+
+        .portfolio-art strong{
+          position:relative;
+          z-index:3;
+          font-size:22px;
+          margin-top:8px;
+        }
+
+        .portfolio-info{
+          padding:18px;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        }
+
+        .portfolio-info small{
+          color:#8b5cf6;
+          font-size:10px;
+        }
+
+        .portfolio-info h3{
+          margin:5px 0 0;
+          font-size:15px;
+        }
+
+        .portfolio-info>span{
+          width:38px;
+          height:38px;
+          border-radius:12px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          background:rgba(255,255,255,.05);
+          border:1px solid rgba(255,255,255,.08);
+        }
+
+        .shop-section{
+          border-top:1px solid rgba(255,255,255,.06);
+        }
+
+        .product-grid{
+          display:grid;
+          grid-template-columns:repeat(3,1fr);
+          gap:20px;
+        }
+
+        .product-card{
+          border-radius:24px;
+          overflow:hidden;
+          border:1px solid rgba(255,255,255,.09);
+          background:rgba(8,11,22,.9);
+          transition:.3s;
+        }
+
+        .product-card:hover{
+          transform:translateY(-6px);
+          box-shadow:0 25px 70px rgba(0,0,0,.32);
+        }
+
+        .product-preview{
+          height:250px;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          position:relative;
+          overflow:hidden;
+          background:
+            radial-gradient(circle at 50% 45%,rgba(124,58,237,.35),transparent 35%),
+            linear-gradient(145deg,#11152b,#050710);
+        }
+
+        .product-2{
+          background:
+            radial-gradient(circle at 50% 45%,rgba(37,99,235,.32),transparent 35%),
+            linear-gradient(145deg,#07162b,#050710);
+        }
+
+        .product-3{
+          background:
+            radial-gradient(circle at 50% 45%,rgba(236,72,153,.3),transparent 35%),
+            linear-gradient(145deg,#21091a,#050710);
+        }
+
+        .product-preview span{
+          font-size:72px;
+          text-shadow:0 0 35px #8b5cf6;
+        }
+
+        .product-preview small{
+          margin-top:15px;
+          color:#8991a5;
+          letter-spacing:3px;
+          font-size:8px;
+        }
+
+        .product-body{padding:22px}
+
+        .product-tag{
+          display:inline-block;
+          padding:6px 10px;
+          border-radius:20px;
+          color:#c4b5fd;
+          background:rgba(124,58,237,.12);
+          font-size:10px;
+        }
+
+        .product-body h3{
+          margin:15px 0 22px;
+          font-size:17px;
+        }
+
+        .product-bottom{
+          display:flex;
+          align-items:flex-end;
+          justify-content:space-between;
+          border-top:1px solid rgba(255,255,255,.07);
+          padding-top:17px;
+        }
+
+        .product-bottom div{
+          display:flex;
+          flex-direction:column;
+          gap:5px;
+        }
+
+        .product-bottom small{
+          color:#6f778a;
+          font-size:10px;
+        }
+
+        .product-bottom b{
+          font-size:14px;
+        }
+
+        .product-bottom button{
+          border:1px solid rgba(139,92,246,.35);
+          background:rgba(124,58,237,.12);
+          color:#ddd6fe;
+          padding:9px 15px;
+          border-radius:11px;
+        }
+
+        .seller-section{
+          width:min(1420px,94%);
+          margin:0 auto;
+          padding:85px 0;
+          border-top:1px solid rgba(255,255,255,.06);
+        }
+
+        .seller-box{
+          min-height:360px;
+          border-radius:30px;
+          border:1px solid rgba(139,92,246,.25);
+          background:
+            radial-gradient(circle at 15% 50%,rgba(37,99,235,.16),transparent 35%),
+            radial-gradient(circle at 85% 40%,rgba(168,85,247,.18),transparent 35%),
+            rgba(8,11,22,.75);
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          align-items:center;
+          gap:50px;
+          padding:55px;
+          position:relative;
+          overflow:hidden;
+        }
+
+        .seller-copy span{
+          color:#c084fc;
+          font-size:13px;
+        }
+
+        .seller-copy h2{
+          font-size:38px;
+          margin:12px 0 18px;
+        }
+
+        .seller-copy p{
+          color:#8b93a7;
+          line-height:2;
+          max-width:600px;
+        }
+
+        .seller-btn{
+          display:inline-flex;
+          margin-top:25px;
+          min-height:50px;
+          padding:0 25px;
+          align-items:center;
+          justify-content:center;
+          border-radius:14px;
+          background:linear-gradient(90deg,#7c3aed,#2563eb);
+          box-shadow:0 12px 35px rgba(99,102,241,.25);
+          font-size:13px;
+        }
+
+        .seller-visual{
+          min-height:240px;
+          position:relative;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+        }
+
+        .seller-circle{
+          width:210px;
+          height:210px;
+          border-radius:50%;
+          background:
+            radial-gradient(circle at 35% 30%,rgba(255,255,255,.25),transparent 12%),
+            linear-gradient(145deg,#7c3aed,#1d4ed8);
+          box-shadow:
+            0 0 0 20px rgba(124,58,237,.05),
+            0 0 80px rgba(99,102,241,.35);
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-size:70px;
+        }
+
+        .seller-mini{
+          position:absolute;
+          padding:13px 18px;
+          border-radius:14px;
+          border:1px solid rgba(255,255,255,.12);
+          background:rgba(7,10,22,.78);
+          backdrop-filter:blur(15px);
+          box-shadow:0 12px 30px rgba(0,0,0,.3);
+          font-size:11px;
+        }
+
+        .seller-mini.one{top:15px;right:4%}
+        .seller-mini.two{bottom:10px;left:3%}
+        .seller-mini.three{top:45%;left:0}
+
+        .reviews-section{
+          border-top:1px solid rgba(255,255,255,.06);
+        }
+
+        .reviews-grid{
+          display:grid;
+          grid-template-columns:repeat(3,1fr);
+          gap:18px;
+          margin-top:40px;
+        }
+
+        .review-card{
+          border-radius:22px;
+          padding:26px;
+          border:1px solid rgba(255,255,255,.09);
+          background:
+            radial-gradient(circle at 100% 0%,rgba(124,58,237,.1),transparent 35%),
+            rgba(8,11,22,.78);
+          transition:.3s;
+        }
+
+        .review-card:hover{
+          transform:translateY(-5px);
+          border-color:rgba(168,85,247,.4);
+        }
+
+        .quote{
+          font-size:42px;
+          height:30px;
+          color:#8b5cf6;
+          line-height:1;
+        }
+
+        .stars{
+          color:#fbbf24;
+          letter-spacing:3px;
+          margin:15px 0;
+        }
+
+        .review-card>p{
+          color:#a1a8b8;
+          line-height:2;
+          min-height:85px;
+          font-size:13px;
+        }
+
+        .review-user{
+          display:flex;
+          align-items:center;
+          gap:12px;
+          margin-top:20px;
+          padding-top:18px;
+          border-top:1px solid rgba(255,255,255,.07);
+        }
+
+        .avatar{
+          width:43px;
+          height:43px;
+          border-radius:50%;
+          background:linear-gradient(145deg,#7c3aed,#2563eb);
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-weight:800;
+        }
+
+        .review-user strong{
+          display:block;
+          font-size:13px;
+        }
+
+        .review-user small{
+          display:block;
+          margin-top:4px;
+          color:#737b90;
+          font-size:10px;
+        }
+
+        .order-cta{
+          width:min(1180px,92%);
+          margin:45px auto 90px;
+          padding:65px 30px;
+          text-align:center;
+          position:relative;
+          overflow:hidden;
+          border-radius:30px;
+          border:1px solid rgba(139,92,246,.28);
+          background:
+            radial-gradient(circle at 50% 100%,rgba(37,99,235,.2),transparent 45%),
+            radial-gradient(circle at 50% 0%,rgba(168,85,247,.18),transparent 42%),
+            rgba(8,11,22,.82);
+        }
+
+        .cta-glow{
+          position:absolute;
+          width:400px;
+          height:130px;
+          border-radius:50%;
+          background:#7c3aed;
+          filter:blur(110px);
+          opacity:.15;
+          bottom:-80px;
+          left:50%;
+          transform:translateX(-50%);
+        }
+
+        .order-cta span{
+          color:#c084fc;
+          font-size:13px;
+        }
+
+        .order-cta h2{
+          font-size:38px;
+          margin:13px 0;
+          position:relative;
+        }
+
+        .order-cta p{
+          color:#8991a5;
+          line-height:2;
+          max-width:700px;
+          margin:0 auto 30px;
+          position:relative;
+        }
+
+        .order-cta .primary{
+          position:relative;
+          display:inline-flex;
+        }
+
+        footer{
+          width:min(1420px,94%);
+          margin:0 auto;
+          padding:45px 0 30px;
+          border-top:1px solid rgba(255,255,255,.08);
+        }
+
+        .footer-main{
+          display:grid;
+          grid-template-columns:1.3fr .8fr 1fr;
+          gap:50px;
+          padding-bottom:40px;
+        }
+
+        .footer-brand{
+          display:flex;
+          align-items:flex-start;
+          gap:17px;
+        }
+
+        .brand-mark{
+          width:48px;
+          height:48px;
+          border-radius:14px;
+          background:linear-gradient(145deg,#7c3aed,#2563eb);
+          box-shadow:0 0 30px rgba(124,58,237,.25);
+        }
+
+        .footer-brand strong{
+          font-size:22px;
+        }
+
+        .footer-brand p{
+          color:#727b90;
+          font-size:12px;
+          line-height:1.9;
+          margin-top:8px;
+        }
+
+        .footer-links{
+          display:flex;
+          flex-direction:column;
+          gap:13px;
+        }
+
+        .footer-links a{
+          color:#8e96aa;
+          font-size:12px;
+        }
+
+        .footer-links a:hover{
+          color:white;
+        }
+
+        .newsletter strong{
+          font-size:14px;
+        }
+
+        .newsletter p{
+          color:#727b90;
+          font-size:11px;
+          line-height:1.8;
+        }
+
+        .newsletter>div{
+          display:flex;
+          gap:8px;
+        }
+
+        .newsletter input{
+          min-width:0;
+          flex:1;
+          border:1px solid rgba(255,255,255,.1);
+          background:rgba(255,255,255,.035);
+          color:white;
+          border-radius:11px;
+          padding:11px;
+          outline:none;
+        }
+
+        .newsletter button{
+          border:0;
+          border-radius:11px;
+          padding:0 16px;
+          background:linear-gradient(90deg,#7c3aed,#2563eb);
+          color:white;
+        }
+
+        .copyright{
+          border-top:1px solid rgba(255,255,255,.06);
+          padding-top:25px;
+          color:#596174;
+          text-align:center;
+          font-size:10px;
+        }
+
+        @media(max-width:1050px){
+          nav{display:none}
+
+          .nav-shell{
+            grid-template-columns:1fr auto;
+          }
+
+          .hero{
+            grid-template-columns:1fr;
+            padding-top:55px;
+          }
+
+          .hero-copy{
+            text-align:center;
+          }
+
+          .hero-copy p{
+            margin-left:auto;
+            margin-right:auto;
+          }
+
+          .hero-buttons{
+            justify-content:center;
+          }
+
+          .hero-visual{
+            height:500px;
+          }
+
+          .services-grid{
+            grid-template-columns:repeat(2,1fr);
+          }
+
+          .portfolio-grid{
+            grid-template-columns:repeat(2,1fr);
+          }
+
+          .product-grid{
+            grid-template-columns:repeat(2,1fr);
+          }
+
+          .seller-box{
+            grid-template-columns:1fr;
+          }
+
+          .seller-copy{
+            text-align:center;
+          }
+
+          .seller-copy p{
+            margin-left:auto;
+            margin-right:auto;
+          }
+
+          .reviews-grid{
+            grid-template-columns:1fr 1fr;
+          }
+
+          .footer-main{
+            grid-template-columns:1fr 1fr;
+          }
+        }
+
+        @media(max-width:650px){
+          .nav-shell{
+            width:92%;
+            height:72px;
+          }
+
+          .brand-logo{
+            width:115px;
+            height:48px;
+          }
+
+          .search{
+            display:none;
+          }
+
+          .account{
+            min-height:40px;
+            padding:0 13px;
+            font-size:11px;
+          }
+
+          .hero{
+            width:90%;
+            min-height:auto;
+            padding:48px 0 55px;
+          }
+
+          .eyebrow{
+            font-size:10px;
+          }
+
+          .hero h1{
+            font-size:42px;
+            letter-spacing:-1px;
+          }
+
+          .hero-copy p{
+            font-size:13px;
+          }
+
+          .hero-buttons{
+            flex-direction:column;
+          }
+
+          .primary,
+          .secondary,
+          .outline-btn{
+            width:100%;
+          }
+
+          .hero-visual{
+            height:410px;
+          }
+
+          .device{
+            width:290px;
+            height:205px;
+          }
+
+          .screen{
+            height:165px;
+          }
+
+          .screen-logo{
+            font-size:27px;
+          }
+
+          .platform{
+            width:340px;
+          }
+
+          .float-card{
+            width:105px;
+            min-height:85px;
+          }
+
+          .float-card span{
+            font-size:25px;
+          }
+
+          .float-card b{
+            font-size:9px;
+          }
+
+          .float-card small{
+            font-size:7px;
+          }
+
+          .services-section,
+          .portfolio-section,
+          .shop-section,
+          .seller-section,
+          .reviews-section{
+            width:90%;
+            padding:60px 0;
+          }
+
+          .section-head.row{
+            display:block;
+          }
+
+          .section-head h2{
+            font-size:28px;
+          }
+
+          .section-head p{
+            font-size:12px;
+          }
+
+          .services-grid,
+          .portfolio-grid,
+          .product-grid,
+          .reviews-grid{
+            grid-template-columns:1fr;
+          }
+
+          .service-card{
+            min-height:auto;
+          }
+
+          .portfolio-art{
+            height:300px;
+          }
+
+          .seller-box{
+            padding:35px 20px;
+            border-radius:24px;
+          }
+
+          .seller-copy h2{
+            font-size:28px;
+          }
+
+          .seller-circle{
+            width:165px;
+            height:165px;
+            font-size:55px;
+          }
+
+          .seller-mini{
+            padding:10px 12px;
+            font-size:9px;
+          }
+
+          .order-cta{
+            padding:50px 20px;
+          }
+
+          .order-cta h2{
+            font-size:29px;
+          }
+
+          .footer-main{
+            grid-template-columns:1fr;
+            gap:30px;
+          }
+
+          .newsletter>div{
+            flex-direction:column;
+          }
+
+          .newsletter button{
+            min-height:42px;
+          }
+        }
+      `}</style>
+    </main>
+  );
+}

@@ -1,0 +1,550 @@
+"use client";
+
+import Link from "next/link";
+
+const services = [
+  {
+    icon: "🎨",
+    title: "طراحی اختصاصی",
+    desc: "پوستر، کاور، بنر، تصویر تبلیغاتی و طرح‌های اختصاصی متناسب با نیاز شما",
+    href: "/order",
+  },
+  {
+    icon: "🖼️",
+    title: "نمونه‌کارها",
+    desc: "جدیدترین پروژه‌ها و طراحی‌های انجام‌شده در طرحنا را ببینید",
+    href: "/portfolio",
+  },
+  {
+    icon: "📦",
+    title: "فروشگاه فایل",
+    desc: "پک‌های آماده، پوستر، قالب و فایل‌های لایه‌باز را دریافت کنید",
+    href: "/shop",
+  },
+  {
+    icon: "💎",
+    title: "فروشنده شو",
+    desc: "طرح‌ها و فایل‌های خودت را در مارکت طرحنا بفروش و درآمد کسب کن",
+    href: "/sell",
+  },
+];
+
+const portfolio = [
+  { title: "پوستر تبلیغاتی", tag: "طراحی پوستر", emoji: "✨" },
+  { title: "کاور شبکه اجتماعی", tag: "سوشال مدیا", emoji: "🎯" },
+  { title: "پوستر مناسبتی", tag: "پوستر", emoji: "🌙" },
+];
+
+const products = [
+  { title: "پک قالب پست اینستاگرام", price: "۸۹,۰۰۰", type: "فایل آماده" },
+  { title: "پوستر لایه‌باز حرفه‌ای", price: "۱۲۹,۰۰۰", type: "PSD" },
+  { title: "پک استوری تبلیغاتی", price: "۶۹,۰۰۰", type: "فایل آماده" },
+];
+
+export default function Home() {
+  return (
+    <main className="tarhna-home" dir="rtl">
+      <header className="topbar">
+        <Link href="/" className="brand">
+          <span className="brand-mark">ط</span>
+          <span>طرحنا</span>
+        </Link>
+
+        <nav>
+          <Link href="/portfolio">نمونه‌کارها</Link>
+          <Link href="/shop">فروشگاه</Link>
+          <Link href="/sell">فروش در طرحنا</Link>
+        </nav>
+
+        <Link href="/dashboard" className="account-btn">
+          حساب من
+        </Link>
+      </header>
+
+      <section className="hero">
+        <div className="hero-badge">✦ استودیوی طراحی و مارکت خلاقیت</div>
+
+        <h1>
+          ایده‌ات را به یک
+          <span> طراحی حرفه‌ای </span>
+          تبدیل کن
+        </h1>
+
+        <p>
+          سفارشت را ثبت کن، جزئیات طرحت را بگو و نتیجه نهایی را
+          مستقیماً داخل حساب کاربری خودت تحویل بگیر.
+        </p>
+
+        <div className="hero-actions">
+          <Link href="/order" className="primary">
+            ثبت سفارش طراحی ✦
+          </Link>
+          <Link href="/portfolio" className="secondary">
+            مشاهده نمونه‌کارها
+          </Link>
+        </div>
+
+        <div className="hero-art">
+          <div className="orb orb-one" />
+          <div className="orb orb-two" />
+          <div className="glass-card">
+            <span>طرحنا</span>
+            <small>Creative Studio</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-title">
+          <div>
+            <span>خدمات طرحنا</span>
+            <h2>هر چیزی که برای طراحی نیاز داری</h2>
+          </div>
+        </div>
+
+        <div className="service-grid">
+          {services.map((item) => (
+            <Link href={item.href} className="service-card" key={item.title}>
+              <div className="service-icon">{item.icon}</div>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+              <b>مشاهده ←</b>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-title">
+          <div>
+            <span>نمونه‌کارها</span>
+            <h2>بخشی از طراحی‌های طرحنا</h2>
+          </div>
+          <Link href="/portfolio">مشاهده همه</Link>
+        </div>
+
+        <div className="portfolio-grid">
+          {portfolio.map((item, index) => (
+            <article className={`work-card work-${index + 1}`} key={item.title}>
+              <div className="work-visual">{item.emoji}</div>
+              <small>{item.tag}</small>
+              <h3>{item.title}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-title">
+          <div>
+            <span>فروشگاه طرحنا</span>
+            <h2>فایل‌ها و پک‌های آماده</h2>
+          </div>
+          <Link href="/shop">رفتن به فروشگاه</Link>
+        </div>
+
+        <div className="product-grid">
+          {products.map((item, index) => (
+            <Link href="/shop" className="product-card" key={item.title}>
+              <div className={`product-cover product-${index + 1}`}>
+                <span>Tarhna</span>
+              </div>
+              <small>{item.type}</small>
+              <h3>{item.title}</h3>
+              <div className="product-price">
+                <b>{item.price}</b>
+                <span>تومان</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="seller-section">
+        <div>
+          <span className="seller-label">برای طراحان</span>
+          <h2>طرح می‌سازی؟ در طرحنا بفروش.</h2>
+          <p>
+            فروشگاه خودت را بساز، فایل‌هایت را منتشر کن و از هر فروش درآمد
+            داشته باش. طرحنا فقط درصد مشخصی از فروش را به‌عنوان کمیسیون
+            دریافت می‌کند.
+          </p>
+          <Link href="/sell">شروع فروش در طرحنا</Link>
+        </div>
+
+        <div className="seller-card">
+          <div>🎨</div>
+          <strong>فروشنده طرحنا</strong>
+          <small>فروش فایل • مدیریت محصولات • درآمد از فروش</small>
+        </div>
+      </section>
+
+      <section className="order-cta">
+        <span>یک ایده در ذهن داری؟</span>
+        <h2>سفارشت را ثبت کن؛ طراحی‌اش با طرحنا.</h2>
+        <p>
+          توضیحات، ابعاد و فایل‌های موردنیازت را ارسال کن و مراحل سفارش را
+          از پنل کاربری دنبال کن.
+        </p>
+        <Link href="/order">ثبت سفارش جدید ✦</Link>
+      </section>
+
+      <footer>
+        <div>
+          <strong>طرحنا</strong>
+          <p>استودیوی طراحی و بازار فایل‌های خلاقانه</p>
+        </div>
+
+        <div className="footer-links">
+          <Link href="/order">ثبت سفارش</Link>
+          <Link href="/portfolio">نمونه‌کارها</Link>
+          <Link href="/shop">فروشگاه</Link>
+          <Link href="/sell">فروشنده شو</Link>
+        </div>
+
+        <small>© ۱۴۰۵ طرحنا — تمامی حقوق محفوظ است.</small>
+      </footer>
+
+      <style jsx>{`
+        .tarhna-home {
+          min-height: 100vh;
+          background:
+            radial-gradient(circle at 85% 12%, rgba(168,85,247,.16), transparent 27%),
+            radial-gradient(circle at 12% 32%, rgba(59,130,246,.13), transparent 25%),
+            #07070c;
+          color: white;
+          font-family: Arial, sans-serif;
+        }
+
+        .topbar {
+          height: 76px;
+          max-width: 1180px;
+          margin: auto;
+          padding: 0 22px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: white;
+          text-decoration: none;
+          font-size: 21px;
+          font-weight: 900;
+        }
+
+        .brand-mark {
+          width: 42px;
+          height: 42px;
+          display: grid;
+          place-items: center;
+          border-radius: 14px;
+          background: linear-gradient(135deg,#e936d2,#397cff);
+          box-shadow: 0 0 28px rgba(168,85,247,.35);
+        }
+
+        nav {
+          display: flex;
+          gap: 28px;
+        }
+
+        nav a, .footer-links a {
+          color: #a1a1aa;
+          text-decoration: none;
+          font-size: 14px;
+        }
+
+        .account-btn {
+          color: white;
+          text-decoration: none;
+          padding: 10px 17px;
+          border-radius: 12px;
+          background: rgba(255,255,255,.07);
+          border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .hero {
+          max-width: 1050px;
+          margin: auto;
+          padding: 90px 22px 55px;
+          text-align: center;
+        }
+
+        .hero-badge, .seller-label {
+          display: inline-block;
+          padding: 8px 15px;
+          border: 1px solid rgba(217,70,239,.25);
+          background: rgba(168,85,247,.09);
+          border-radius: 999px;
+          color: #e9b8ff;
+          font-size: 13px;
+        }
+
+        .hero h1 {
+          max-width: 800px;
+          margin: 25px auto 18px;
+          font-size: clamp(40px,7vw,74px);
+          line-height: 1.25;
+          font-weight: 950;
+        }
+
+        .hero h1 span {
+          background: linear-gradient(90deg,#ef3fca,#9d4edd,#3b82f6);
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+
+        .hero > p {
+          max-width: 670px;
+          margin: auto;
+          color: #9f9fa9;
+          line-height: 2;
+        }
+
+        .hero-actions {
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+          margin-top: 30px;
+        }
+
+        .hero-actions a, .order-cta a, .seller-section a {
+          text-decoration: none;
+          padding: 14px 23px;
+          border-radius: 14px;
+          color: white;
+          font-weight: 700;
+        }
+
+        .primary, .order-cta a {
+          background: linear-gradient(90deg,#df38c9,#7c4dff,#3688ff);
+          box-shadow: 0 12px 35px rgba(124,77,255,.25);
+        }
+
+        .secondary {
+          border: 1px solid rgba(255,255,255,.12);
+          background: rgba(255,255,255,.035);
+        }
+
+        .hero-art {
+          height: 270px;
+          max-width: 650px;
+          margin: 55px auto 0;
+          position: relative;
+          display: grid;
+          place-items: center;
+        }
+
+        .glass-card {
+          width: 235px;
+          height: 155px;
+          border-radius: 34px;
+          background: linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.035));
+          border: 1px solid rgba(255,255,255,.22);
+          backdrop-filter: blur(20px);
+          box-shadow: 0 25px 70px rgba(116,61,255,.35), inset 0 0 35px rgba(255,255,255,.06);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          transform: perspective(600px) rotateX(8deg) rotateY(-12deg);
+          position: relative;
+          z-index: 2;
+        }
+
+        .glass-card span {
+          font-size: 35px;
+          font-weight: 950;
+        }
+
+        .glass-card small { color:#bdbdcc; margin-top:8px; }
+
+        .orb {
+          position:absolute;
+          border-radius:50%;
+          filter:blur(35px);
+        }
+
+        .orb-one {
+          width:170px;height:170px;background:#7c3aed;opacity:.3;
+        }
+
+        .orb-two {
+          width:130px;height:130px;background:#0284c7;opacity:.3;
+          transform:translate(-150px,50px);
+        }
+
+        .section {
+          max-width: 1120px;
+          margin: auto;
+          padding: 65px 22px;
+        }
+
+        .section-title {
+          display:flex;
+          justify-content:space-between;
+          align-items:end;
+          margin-bottom:25px;
+        }
+
+        .section-title span { color:#bd74ff;font-size:13px; }
+        .section-title h2 { font-size:28px;margin:8px 0 0; }
+        .section-title > a { color:#aaa;text-decoration:none;font-size:13px; }
+
+        .service-grid {
+          display:grid;
+          grid-template-columns:repeat(4,1fr);
+          gap:15px;
+        }
+
+        .service-card {
+          min-height:230px;
+          padding:24px;
+          border-radius:25px;
+          background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));
+          border:1px solid rgba(255,255,255,.08);
+          text-decoration:none;
+          color:white;
+          transition:.25s;
+        }
+
+        .service-card:hover { transform:translateY(-5px);border-color:rgba(168,85,247,.45); }
+        .service-icon { font-size:30px;margin-bottom:30px; }
+        .service-card h3 { margin:0 0 10px;font-size:18px; }
+        .service-card p { color:#92929e;font-size:13px;line-height:1.9;min-height:70px; }
+        .service-card b { color:#c985ff;font-size:12px; }
+
+        .portfolio-grid,.product-grid {
+          display:grid;
+          grid-template-columns:repeat(3,1fr);
+          gap:17px;
+        }
+
+        .work-card,.product-card {
+          padding:12px;
+          border-radius:24px;
+          background:rgba(255,255,255,.035);
+          border:1px solid rgba(255,255,255,.075);
+          color:white;
+          text-decoration:none;
+        }
+
+        .work-visual,.product-cover {
+          height:230px;
+          border-radius:18px;
+          display:grid;
+          place-items:center;
+          font-size:55px;
+          margin-bottom:15px;
+        }
+
+        .work-1 .work-visual,.product-1 { background:linear-gradient(145deg,#321252,#121b52); }
+        .work-2 .work-visual,.product-2 { background:linear-gradient(145deg,#07384c,#30184e); }
+        .work-3 .work-visual,.product-3 { background:linear-gradient(145deg,#4c172f,#151945); }
+
+        .work-card small,.product-card small { color:#9d70d9; }
+        .work-card h3,.product-card h3 { margin:8px 3px 10px; }
+
+        .product-cover span {
+          font-size:25px;
+          font-weight:900;
+          transform:rotate(-8deg);
+        }
+
+        .product-price { display:flex;gap:5px;align-items:center;color:#ddd; }
+        .product-price span { font-size:11px;color:#888; }
+
+        .seller-section {
+          max-width:1075px;
+          margin:70px auto;
+          padding:45px;
+          border-radius:32px;
+          border:1px solid rgba(168,85,247,.2);
+          background:linear-gradient(120deg,rgba(126,34,206,.17),rgba(37,99,235,.08));
+          display:grid;
+          grid-template-columns:1.3fr .7fr;
+          gap:40px;
+          align-items:center;
+        }
+
+        .seller-section h2 { font-size:34px;margin:18px 0 10px; }
+        .seller-section p { color:#aaa;line-height:2;margin-bottom:28px; }
+        .seller-section a { background:white;color:#111;display:inline-block; }
+
+        .seller-card {
+          min-height:220px;
+          border-radius:28px;
+          background:rgba(255,255,255,.055);
+          border:1px solid rgba(255,255,255,.1);
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          gap:10px;
+        }
+
+        .seller-card div { font-size:45px; }
+        .seller-card small { color:#92929d;text-align:center; }
+
+        .order-cta {
+          max-width:1075px;
+          margin:90px auto;
+          padding:65px 25px;
+          text-align:center;
+          border-radius:35px;
+          background:
+            radial-gradient(circle at 50% 100%,rgba(59,130,246,.17),transparent 45%),
+            rgba(255,255,255,.035);
+          border:1px solid rgba(255,255,255,.08);
+        }
+
+        .order-cta span { color:#ca8aff; }
+        .order-cta h2 { font-size:36px;margin:12px 0; }
+        .order-cta p { color:#999;margin-bottom:30px;line-height:2; }
+        .order-cta a { display:inline-block; }
+
+        footer {
+          max-width:1120px;
+          margin:auto;
+          padding:45px 22px;
+          border-top:1px solid rgba(255,255,255,.08);
+          display:grid;
+          gap:22px;
+        }
+
+        footer strong { font-size:23px; }
+        footer p,footer small { color:#777; }
+        .footer-links { display:flex;gap:20px;flex-wrap:wrap; }
+
+        @media(max-width:800px) {
+          nav { display:none; }
+          .topbar { height:68px; }
+          .hero { padding-top:60px; }
+          .hero h1 { font-size:43px; }
+          .hero-actions { flex-direction:column; }
+          .hero-actions a { width:100%; }
+          .hero-art { height:240px; }
+          .service-grid { grid-template-columns:1fr 1fr; }
+          .portfolio-grid,.product-grid { grid-template-columns:1fr; }
+          .seller-section {
+            margin:40px 18px;
+            padding:28px 22px;
+            grid-template-columns:1fr;
+          }
+          .seller-section h2,.order-cta h2 { font-size:27px; }
+          .order-cta { margin:50px 18px; }
+          .section { padding:45px 20px; }
+          .section-title h2 { font-size:23px; }
+        }
+
+        @media(max-width:480px) {
+          .service-grid { grid-template-columns:1fr; }
+          .account-btn { font-size:12px;padding:9px 12px; }
+        }
+      `}</style>
+    </main>
+  );
+}

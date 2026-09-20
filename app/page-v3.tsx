@@ -124,7 +124,7 @@ export default function HomePage() {
         </div>
 
         {menuOpen && (
-          <div className="mobile-menu open">
+          <div className="mobile-menu">
             <Link href="/" onClick={() => setMenuOpen(false)}>صفحه اصلی</Link>
             <Link href="/create" onClick={() => setMenuOpen(false)}>ثبت سفارش</Link>
             <Link href="/gallery" onClick={() => setMenuOpen(false)}>نمونه‌کارها</Link>
@@ -490,9 +490,9 @@ export default function HomePage() {
           margin: auto;
           padding: 75px 24px 95px;
           display: grid;
-          grid-template-columns: minmax(0, 1.08fr) minmax(460px, 0.92fr);
+          grid-template-columns: 1fr 0.95fr;
           align-items: center;
-          gap: clamp(36px, 5vw, 72px);
+          gap: 70px;
           position: relative;
         }
 
@@ -786,9 +786,9 @@ export default function HomePage() {
         .services,
         .portfolio,
         .products {
-          width: min(100% - 48px, 1240px);
+          max-width: 1240px;
           margin: auto;
-          padding: 82px 0;
+          padding: 90px 24px;
         }
 
         .section-heading {
@@ -817,8 +817,8 @@ export default function HomePage() {
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 18px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 14px;
         }
 
         .service-card {
@@ -945,8 +945,8 @@ export default function HomePage() {
 
         .product-grid {
           display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 18px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 14px;
         }
 
         .product-card {
@@ -1012,7 +1012,7 @@ export default function HomePage() {
         }
 
         .order-cta {
-          width: min(100% - 48px, 1192px);
+          max-width: 1192px;
           min-height: 190px;
           margin: 45px auto 100px;
           padding: 35px 45px;
@@ -1251,8 +1251,7 @@ export default function HomePage() {
           .services,
           .portfolio,
           .products {
-            width: min(100% - 40px, 760px);
-            padding: 64px 0;
+            padding: 70px 20px;
           }
 
           .services-grid {
@@ -1447,8 +1446,7 @@ export default function HomePage() {
           .services,
           .portfolio,
           .products {
-            width: calc(100% - 34px);
-            padding: 52px 0;
+            padding: 60px 17px;
           }
 
           .section-heading {
@@ -1486,8 +1484,7 @@ export default function HomePage() {
           }
 
           .section-row {
-            align-items: flex-end;
-            gap: 14px;
+            align-items: center;
             margin-bottom: 26px;
           }
 
@@ -1515,8 +1512,8 @@ export default function HomePage() {
           }
 
           .work-card {
-            min-width: min(86%, 330px);
-            height: 260px;
+            min-width: 78%;
+            height: 285px;
             scroll-snap-align: center;
           }
 
@@ -1534,7 +1531,7 @@ export default function HomePage() {
           }
 
           .product-card {
-            min-width: min(82%, 310px);
+            min-width: 72%;
             scroll-snap-align: center;
           }
 
