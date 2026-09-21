@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 type OrderRequest = {
   serviceId?: string;
@@ -29,7 +32,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          message: "نوع خدمت انتخاب نشده است.",
+          message: "لطفاً نوع سرویس را انتخاب کنید.",
         },
         { status: 400 }
       );
@@ -41,46 +44,47 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           success: false,
-          message: "تعداد سفارش باید بین ۱ تا ۹۹۹ باشد.",
+          message: "تعداد باید بین ۱ تا ۹۹۹ باشد.",
         },
         { status: 400 }
       );
     }
 
-    const order = {
-      id: crypto.randomUUID(),
-      orderCode: createOrderCode(),
-      serviceId: body.serviceId,
-      qualityId: body.qualityId ?? "normal",
-      quantity,
-      description: body.description?.trim() ?? "",
-      priority: body.priority ?? "normal",
-      usage: body.usage ?? "",
-      size: body.size ?? "",
-      format: body.format ?? "",
-      style: body.style ?? "",
-      deadline: body.deadline ?? "",
-      calculatedPrice:
-        typeof body.calculatedPrice === "number"
-          ? body.calculatedPrice
-          : null,
-      status: "new",
-      createdAt: new Date().toISOString(),
-    };
+    const order = await prisma.order.create({
+      data: {
+        orderCode: createOrderCode(),
+        serviceId: body.serviceId,
+        qualityId: body.qualityId ?? "normal",
+        quantity,
+        description: body.description?.trim() || null,
+        priority: body.priority || null,
+        usage: body.usage || null,
+        size: body.size || null,
+        format: body.format || null,
+        style: body.style || null,
+        deadline: body.deadline || null,
+        calculatedPrice:
+          typeof body.calculatedPrice === "number"
+            ? Math.round(body.calculatedPrice)
+            : null,
+      },
+    });
 
     return NextResponse.json(
       {
         success: true,
-        message: "سفارش با موفقیت دریافت شد.",
+        message: "سفارش با موفقیت ثبت شد.",
         order,
       },
       { status: 201 }
     );
-  } catch {
+  } catch (error) {
+    console.error("ORDER_CREATE_ERROR:", error);
+
     return NextResponse.json(
       {
         success: false,
-        message: "خطایی در دریافت سفارش رخ داد.",
+        message: "خطایی هنگام ثبت سفارش رخ داد.",
       },
       { status: 500 }
     );
