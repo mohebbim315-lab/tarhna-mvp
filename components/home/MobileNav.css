@@ -1,0 +1,124 @@
+.mobile-bottom-nav {
+  display: none;
+}
+
+/* فقط موبایل */
+@media (max-width: 600px) {
+  .mobile-bottom-nav {
+    position: fixed;
+    z-index: 9999;
+    right: 10px;
+    left: 10px;
+    bottom: 10px;
+
+    height: 66px;
+    padding: 0 8px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+
+    border: 1px solid rgba(139, 92, 246, 0.28);
+    border-radius: 19px;
+
+    background: rgba(6, 10, 25, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+      0 -8px 35px rgba(0, 0, 0, 0.38),
+      0 0 25px rgba(124, 58, 237, 0.08);
+  }
+
+  .mobile-nav-item,
+  .mobile-nav-create {
+    min-width: 0;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    color: #7d879c;
+    text-decoration: none;
+    font-size: 8px;
+    font-weight: 700;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-nav-icon {
+    width: 27px;
+    height: 27px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+    color: #9aa5bb;
+    font-size: 17px;
+
+    transition: 0.2s ease;
+  }
+
+  .mobile-nav-item:first-child {
+    color: #c4b5fd;
+  }
+
+  .mobile-nav-item:first-child .mobile-nav-icon {
+    color: #fff;
+    background: rgba(124, 58, 237, 0.18);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.18);
+  }
+
+  .mobile-nav-item:active .mobile-nav-icon {
+    transform: scale(0.9);
+  }
+
+  .mobile-nav-create {
+    position: relative;
+    justify-content: flex-end;
+    padding-bottom: 8px;
+    color: #d8b4fe;
+  }
+
+  .mobile-create-button {
+    position: absolute;
+    top: -23px;
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    border: 5px solid #050919;
+    border-radius: 50%;
+
+    color: #fff;
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 1;
+
+    background:
+      linear-gradient(135deg, #7c3aed 0%, #9333ea 48%, #3b82f6 100%);
+
+    box-shadow:
+      0 7px 22px rgba(124, 58, 237, 0.42),
+      0 0 22px rgba(139, 92, 246, 0.2);
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .mobile-nav-create:active .mobile-create-button {
+    transform: scale(0.92);
+  }
+
+  .mobile-nav-create > span:last-child {
+    margin-top: 31px;
+  }
+}

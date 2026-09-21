@@ -1,0 +1,194 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import "./Hero.css";
+
+export default function Hero() {
+  const [monitorOn, setMonitorOn] = useState(true);
+  const [animationKey, setAnimationKey] = useState(0);
+
+  function toggleMonitor() {
+    if (monitorOn) {
+      setMonitorOn(false);
+    } else {
+      setMonitorOn(true);
+      setAnimationKey((key) => key + 1);
+    }
+  }
+
+  return (
+    <>
+      <header className="tarhna-header">
+        <div className="header-inner">
+          <Link href="/" className="brand">
+            <Image
+              src="/images/tarhna-logo.png"
+              alt="طرحنا"
+              width={170}
+              height={75}
+              priority
+            />
+          </Link>
+
+          <nav className="desktop-nav">
+            <Link href="/">صفحه اصلی</Link>
+            <Link href="#services">خدمات</Link>
+            <Link href="/shop">فروشگاه</Link>
+            <Link href="/sellers">فروشندگان</Link>
+            <Link href="#portfolio">نمونه‌کارها</Link>
+            <Link href="/blog">وبلاگ</Link>
+            <Link href="/about">درباره ما</Link>
+          </nav>
+
+          <div className="header-actions">
+            <Link href="/dashboard" className="account-btn">
+              حساب کاربری
+            </Link>
+
+            <button
+              type="button"
+              className="mobile-menu"
+              aria-label="باز کردن منو"
+            >
+              ☰
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section className="hero" dir="rtl">
+        <div className="hero-glow hero-glow-one" />
+        <div className="hero-glow hero-glow-two" />
+
+        <div className="hero-inner">
+          <div className="hero-content">
+            <span className="hero-badge">
+              ✦ استودیوی خلاقیت طرحنا
+            </span>
+
+            <h1>
+              ایده‌ات را بفرست،
+              <span>حرفه‌ای تحویل بگیر</span>
+            </h1>
+
+            <p className="hero-description">
+              خدمات حرفه‌ای گرافیک و طراحی با ترکیب خلاقیت انسانی و
+              هوش مصنوعی؛ از بازطراحی و افزایش کیفیت تصاویر تا طراحی
+              پوستر، ادیت حرفه‌ای و خلق تصاویر اختصاصی.
+            </p>
+
+            <div className="hero-buttons">
+              <Link href="/order" className="primary-btn">
+                ثبت سفارش
+                <span>←</span>
+              </Link>
+
+              <Link href="#portfolio" className="secondary-btn">
+                مشاهده نمونه‌کارها
+              </Link>
+            </div>
+
+            <div className="hero-features">
+              <div>
+                <b>✦</b>
+                <span>
+                  <strong>کیفیت حرفه‌ای</strong>
+                  خروجی باکیفیت
+                </span>
+              </div>
+
+              <div>
+                <b>◷</b>
+                <span>
+                  <strong>تحویل به‌موقع</strong>
+                  طبق زمان توافق
+                </span>
+              </div>
+
+              <div>
+                <b>◇</b>
+                <span>
+                  <strong>قیمت مناسب</strong>
+                  تعرفه منصفانه
+                </span>
+              </div>
+
+              <div>
+                <b>♡</b>
+                <span>
+                  <strong>پشتیبانی واقعی</strong>
+                  همراه شما
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-visual">
+            <div className="desk-glow" />
+
+            <div className="monitor">
+              <button
+                type="button"
+                className={`monitor-screen ${
+                  monitorOn ? "monitor-on" : "monitor-off"
+                }`}
+                onClick={toggleMonitor}
+                aria-label={
+                  monitorOn
+                    ? "خاموش کردن مانیتور"
+                    : "روشن کردن مانیتور"
+                }
+              >
+                <div className="screen-reflection" />
+
+                {monitorOn && (
+                  <div
+                    key={animationKey}
+                    className="logo-motion"
+                  >
+                    <div className="logo-energy" />
+
+                    <Image
+                      src="/images/tarhna-logo.png"
+                      alt="لوگوی طرحنا"
+                      width={500}
+                      height={230}
+                      priority
+                    />
+
+                    <span className="screen-light-line" />
+
+                    <p>ایده‌ها، تصویر می‌شوند</p>
+                  </div>
+                )}
+
+                {!monitorOn && (
+                  <span className="power-dot" />
+                )}
+              </button>
+
+              <div className="monitor-neck" />
+              <div className="monitor-base" />
+            </div>
+
+            <div className="monitor-hint">
+              <span>●</span>
+              برای خاموش یا روشن کردن، مانیتور را لمس کنید
+            </div>
+
+            <div className="floating-card card-one">
+              <span>✦</span>
+              طراحی خلاقانه
+            </div>
+
+            <div className="floating-card card-two">
+              AI + Creativity
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

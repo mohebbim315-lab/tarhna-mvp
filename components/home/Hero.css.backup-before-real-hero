@@ -1,0 +1,1031 @@
+/* ==============================
+   TARHNA HERO — RESPONSIVE
+   Desktop + Mobile
+================================ */
+
+.tarhna-header {
+  position: relative;
+  z-index: 50;
+  width: 100%;
+  background: rgba(3, 7, 20, 0.92);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  width: min(1400px, 94%);
+  min-height: 74px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.brand img {
+  width: 118px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter:
+    brightness(1.12)
+    drop-shadow(0 0 8px rgba(168, 85, 247, 0.65))
+    drop-shadow(0 0 15px rgba(59, 130, 246, 0.3));
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.desktop-nav a {
+  color: #e8eaf3;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.desktop-nav a:hover {
+  color: #c084fc;
+  text-shadow: 0 0 12px rgba(192, 132, 252, 0.45);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-btn {
+  padding: 10px 17px;
+  border: 1px solid rgba(139, 92, 246, 0.55);
+  border-radius: 11px;
+  background: rgba(91, 33, 182, 0.18);
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.mobile-menu {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  background: rgba(12, 18, 36, 0.9);
+  color: white;
+  font-size: 20px;
+}
+
+
+/* ==============================
+   HERO
+================================ */
+
+.hero {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      circle at 72% 42%,
+      rgba(110, 35, 255, 0.16),
+      transparent 35%
+    ),
+    linear-gradient(180deg, #040817 0%, #020611 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -4;
+  background-image: url("/images/tarhna-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 20, 0.97) 0%,
+      rgba(2, 6, 20, 0.88) 27%,
+      rgba(2, 6, 20, 0.34) 58%,
+      rgba(2, 6, 20, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(2, 6, 18, 0.72),
+      transparent 45%
+    );
+}
+
+.hero-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: -2;
+}
+
+.hero-glow-one {
+  width: 430px;
+  height: 430px;
+  right: 28%;
+  top: 80px;
+  background: rgba(126, 34, 206, 0.13);
+}
+
+.hero-glow-two {
+  width: 360px;
+  height: 360px;
+  left: -100px;
+  bottom: -130px;
+  background: rgba(37, 99, 235, 0.13);
+}
+
+.hero-inner {
+  position: relative;
+  width: min(1400px, 94%);
+  min-height: 650px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 43% 57%;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 610px;
+  padding: 65px 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  background: rgba(88, 28, 135, 0.17);
+  color: #d8b4fe;
+  font-size: 13px;
+  box-shadow: 0 0 25px rgba(126, 34, 206, 0.1);
+}
+
+.hero-content h1 {
+  margin: 0;
+  color: white;
+  font-size: clamp(39px, 4.2vw, 68px);
+  line-height: 1.35;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    #60a5fa,
+    #a855f7 46%,
+    #e879f9
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.18));
+}
+
+.hero-description {
+  max-width: 560px;
+  margin: 20px 0 27px;
+  color: #b8bfd1;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 31px;
+}
+
+.primary-btn,
+.secondary-btn {
+  min-height: 51px;
+  padding: 0 25px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.primary-btn {
+  color: white;
+  background: linear-gradient(135deg, #6d28d9, #9333ea, #7c3aed);
+  box-shadow:
+    0 9px 30px rgba(124, 58, 237, 0.28),
+    inset 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.secondary-btn {
+  color: #f4f4f5;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(8, 13, 29, 0.68);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary-btn:hover {
+  box-shadow: 0 12px 38px rgba(147, 51, 234, 0.4);
+}
+
+.secondary-btn:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+
+/* ==============================
+   FEATURES
+================================ */
+
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 610px;
+}
+
+.hero-features > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 59px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(5, 10, 26, 0.54);
+  border: 1px solid rgba(126, 87, 194, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.hero-features b {
+  flex: 0 0 auto;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #d8b4fe;
+  background: rgba(109, 40, 217, 0.16);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.hero-features span {
+  color: #9299aa;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.hero-features strong {
+  display: block;
+  color: #f3f4f6;
+  font-size: 11px;
+}
+
+
+/* ==============================
+   MONITOR INTERACTIVE AREA
+================================ */
+
+.monitor-hotspot {
+  position: absolute;
+  z-index: 8;
+
+  /*
+    Position of the real monitor in tarhna-hero.png.
+    Desktop values.
+  */
+  top: 20%;
+  right: 8.5%;
+  width: 38%;
+  height: 47%;
+
+  padding: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  overflow: hidden;
+
+  /*
+    Slight perspective matching the photographed monitor.
+  */
+  transform:
+    perspective(1000px)
+    rotateY(-1.5deg)
+    rotateZ(-0.4deg);
+
+  border-radius: 8px;
+  background: rgba(1, 3, 12, 0.9);
+
+  box-shadow:
+    inset 0 0 35px rgba(0, 0, 0, 0.85),
+    0 0 8px rgba(120, 50, 255, 0.22);
+
+  transition:
+    background 0.8s ease,
+    box-shadow 0.8s ease,
+    filter 0.8s ease;
+}
+
+.monitor-hotspot.is-on {
+  background:
+    radial-gradient(
+      ellipse at 50% 48%,
+      rgba(89, 25, 160, 0.42),
+      rgba(7, 10, 30, 0.92) 55%,
+      #02040b 100%
+    );
+
+  box-shadow:
+    inset 0 0 40px rgba(11, 6, 35, 0.82),
+    inset 0 0 80px rgba(76, 29, 149, 0.15),
+    0 0 18px rgba(147, 51, 234, 0.27),
+    0 0 45px rgba(79, 70, 229, 0.12);
+}
+
+.monitor-hotspot.is-off {
+  background: #010207;
+  box-shadow:
+    inset 0 0 60px #000,
+    0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+
+/* monitor glow */
+
+.monitor-light {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(168, 85, 247, 0.25) 0%,
+      rgba(79, 70, 229, 0.10) 40%,
+      transparent 72%
+    );
+}
+
+.monitor-hotspot.is-on .monitor-light {
+  animation: tarhnaScreenGlow 2.6s ease-out forwards;
+}
+
+
+/* ==============================
+   LOGO ON MONITOR
+================================ */
+
+.monitor-logo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 7%;
+  opacity: 0;
+
+  animation:
+    tarhnaLogoReveal 3.2s cubic-bezier(0.16, 1, 0.3, 1)
+    0.25s forwards;
+
+  will-change: opacity, transform, filter;
+}
+
+.monitor-logo img {
+  width: min(82%, 500px);
+  height: auto;
+  object-fit: contain;
+
+  filter:
+    brightness(1.08)
+    saturate(1.13)
+    drop-shadow(0 0 5px rgba(216, 180, 254, 0.72))
+    drop-shadow(0 0 13px rgba(147, 51, 234, 0.62))
+    drop-shadow(0 0 24px rgba(37, 99, 235, 0.35));
+}
+
+.monitor-logo small {
+  margin-top: -1%;
+  color: rgba(239, 231, 255, 0.88);
+  font-size: clamp(8px, 0.85vw, 14px);
+  letter-spacing: 0.3px;
+  text-shadow:
+    0 0 8px rgba(168, 85, 247, 0.55);
+}
+
+.monitor-off-state {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.08);
+}
+
+.mobile-monitor-hint {
+  display: none;
+}
+
+
+/* ==============================
+   SMOOTH ANIMATIONS
+================================ */
+
+@keyframes tarhnaLogoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(5px);
+    filter: brightness(0.25) blur(5px);
+  }
+
+  30% {
+    opacity: 0.16;
+    transform: scale(0.965) translateY(3px);
+    filter: brightness(0.55) blur(3px);
+  }
+
+  58% {
+    opacity: 0.62;
+    transform: scale(0.985) translateY(1px);
+    filter: brightness(0.85) blur(1px);
+  }
+
+  82% {
+    opacity: 0.92;
+    transform: scale(0.997);
+    filter: brightness(1.03) blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1.08) blur(0);
+  }
+}
+
+@keyframes tarhnaScreenGlow {
+  0% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0.52;
+  }
+}
+
+
+/* ==============================
+   TABLET
+================================ */
+
+@media (max-width: 1050px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: grid;
+    place-items: center;
+  }
+
+  .hero-inner {
+    grid-template-columns: 48% 52%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(35px, 5vw, 54px);
+  }
+
+  .hero-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .monitor-hotspot {
+    right: 5%;
+    width: 41%;
+  }
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 720px) {
+  .tarhna-header {
+    min-height: 65px;
+  }
+
+  .header-inner {
+    width: 92%;
+    min-height: 65px;
+    justify-content: space-between;
+  }
+
+  .brand {
+    margin-left: 0;
+  }
+
+  .brand img {
+    width: 104px;
+  }
+
+  .account-btn {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-bottom: 30px;
+  }
+
+  .hero::before {
+    /*
+      On mobile the same source image becomes
+      the visual monitor/desk banner.
+    */
+    background-size: auto 390px;
+    background-position: 63% 4px;
+    background-repeat: no-repeat;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 6, 18, 0.05) 0,
+        rgba(2, 6, 18, 0.10) 220px,
+        rgba(2, 6, 18, 0.94) 380px,
+        #020611 520px
+      );
+  }
+
+  .hero-inner {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 370px;
+  }
+
+  .hero-content {
+    width: 92%;
+    max-width: none;
+    padding: 24px 0 15px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-bottom: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(34px, 10.5vw, 48px);
+    line-height: 1.4;
+  }
+
+  .hero-content h1 span {
+    margin-top: 2px;
+  }
+
+  .hero-description {
+    margin: 15px auto 22px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .hero-buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .hero-features {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    width: 100%;
+  }
+
+  .hero-features > div {
+    min-height: 78px;
+    padding: 7px 3px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .hero-features b {
+    width: 31px;
+    height: 31px;
+  }
+
+  .hero-features span {
+    text-align: center;
+    font-size: 8px;
+  }
+
+  .hero-features strong {
+    font-size: 9px;
+  }
+
+
+  /*
+    Interactive screen over the monitor
+    in the mobile crop.
+  */
+
+  .monitor-hotspot {
+    top: 58px;
+    right: 18%;
+    width: 64%;
+    height: 205px;
+
+    transform:
+      perspective(900px)
+      rotateY(-1deg)
+      rotateZ(-0.3deg);
+
+    border-radius: 5px;
+  }
+
+  .monitor-logo {
+    padding: 7%;
+  }
+
+  .monitor-logo img {
+    width: 86%;
+  }
+
+  .monitor-logo small {
+    font-size: 8px;
+  }
+
+  .mobile-monitor-hint {
+    display: block;
+    position: absolute;
+    top: 328px;
+    left: 50%;
+    z-index: 9;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 90%;
+    padding: 6px 12px;
+    border-radius: 999px;
+    color: rgba(226, 232, 240, 0.68);
+    background: rgba(3, 7, 18, 0.55);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    font-size: 9px;
+    backdrop-filter: blur(8px);
+  }
+}
+
+
+/* ==============================
+   SMALL PHONES
+================================ */
+
+@media (max-width: 390px) {
+  .hero-inner {
+    padding-top: 345px;
+  }
+
+  .hero::before {
+    background-size: auto 365px;
+  }
+
+  .monitor-hotspot {
+    top: 56px;
+    right: 17%;
+    width: 66%;
+    height: 190px;
+  }
+
+  .mobile-monitor-hint {
+    top: 305px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .monitor-logo,
+  .monitor-hotspot.is-on .monitor-light {
+    animation-duration: 0.01ms !important;
+  }
+}
+/* ==================================================
+   TARHNA HERO — REAL DESK / MONITOR FIX
+   Keep the real monitor from tarhna-hero.png
+================================================== */
+
+/* تصویر اتاق را واضح‌تر و طبیعی نگه می‌داریم */
+.hero::before {
+  opacity: 1 !important;
+  background-image: url("/images/tarhna-hero.png") !important;
+  background-repeat: no-repeat !important;
+}
+
+/* مانیتور تعاملی دیگر قاب و مانیتور مصنوعی نمی‌سازد */
+.monitor-hotspot {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+/* در حالت روشن هم فقط محتوای صفحه روشن شود */
+.monitor-hotspot.is-on {
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(93, 33, 180, 0.16) 0%,
+      rgba(30, 20, 80, 0.08) 48%,
+      transparent 75%
+    ) !important;
+
+  box-shadow:
+    inset 0 0 28px rgba(139, 92, 246, 0.12) !important;
+}
+
+/* خاموش شدن واقعی صفحه */
+.monitor-hotspot.is-off {
+  background: rgba(0, 0, 4, 0.94) !important;
+
+  box-shadow:
+    inset 0 0 35px rgba(0, 0, 0, 0.98) !important;
+
+  filter: brightness(0.45);
+}
+
+
+/* نور قبل از ظاهر شدن لوگو */
+.monitor-light {
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(168, 85, 247, 0.32) 0%,
+      rgba(79, 70, 229, 0.16) 32%,
+      rgba(37, 99, 235, 0.07) 53%,
+      transparent 76%
+    ) !important;
+}
+
+
+/* لوگو نرم و بدون فلش ظاهر شود */
+.monitor-logo {
+  animation:
+    tarhnaFinalLogoReveal 3.4s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.35s both !important;
+}
+
+.monitor-logo img {
+  width: 78% !important;
+
+  filter:
+    brightness(1.12)
+    saturate(1.15)
+    drop-shadow(0 0 5px rgba(255,255,255,0.35))
+    drop-shadow(0 0 11px rgba(192,132,252,0.65))
+    drop-shadow(0 0 22px rgba(126,34,206,0.48))
+    drop-shadow(0 0 32px rgba(37,99,235,0.25))
+    !important;
+}
+
+@keyframes tarhnaFinalLogoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+    filter: brightness(0.35) blur(4px);
+  }
+
+  25% {
+    opacity: 0.08;
+    transform: scale(0.955);
+    filter: brightness(0.5) blur(3px);
+  }
+
+  50% {
+    opacity: 0.38;
+    transform: scale(0.975);
+    filter: brightness(0.75) blur(1.5px);
+  }
+
+  75% {
+    opacity: 0.76;
+    transform: scale(0.992);
+    filter: brightness(0.95) blur(0.4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1.08) blur(0);
+  }
+}
+
+
+/* ==========================
+   DESKTOP
+========================== */
+
+@media (min-width: 721px) {
+
+  .hero::before {
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  /*
+    سمت متن تیره می‌ماند،
+    سمت تصویر واضح‌تر دیده می‌شود.
+  */
+  .hero::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2,6,20,0.98) 0%,
+        rgba(2,6,20,0.91) 27%,
+        rgba(2,6,20,0.56) 45%,
+        rgba(2,6,20,0.16) 68%,
+        rgba(2,6,20,0.05) 100%
+      ) !important;
+  }
+
+  /*
+    این محدوده روی صفحه مانیتور واقعی عکس می‌نشیند.
+    بعد از دیدن نتیجه اگر لازم باشد چند درصد
+    جابه‌جایش می‌کنیم.
+  */
+  .monitor-hotspot {
+    top: 20% !important;
+    right: 7.5% !important;
+    width: 38% !important;
+    height: 46% !important;
+
+    border-radius: 5px !important;
+
+    transform:
+      perspective(1200px)
+      rotateY(-2deg)
+      rotateZ(-0.5deg)
+      !important;
+  }
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 720px) {
+
+  /*
+    بالای Hero خود عکس اتاق است؛
+    دیگر مستطیل مصنوعی نمی‌سازیم.
+  */
+  .hero {
+    background: #020611 !important;
+  }
+
+  .hero::before {
+    opacity: 1 !important;
+
+    background-size: auto 390px !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /*
+    بالا تقریباً شفاف است تا اتاق دیده شود،
+    پایین به متن محو می‌شود.
+  */
+  .hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2,6,18,0.02) 0px,
+        rgba(2,6,18,0.03) 180px,
+        rgba(2,6,18,0.18) 270px,
+        rgba(2,6,18,0.78) 345px,
+        #020611 430px
+      ) !important;
+  }
+
+  .hero-inner {
+    padding-top: 390px !important;
+  }
+
+  /*
+    محدوده کلیک دقیقاً روی مانیتور موجود در عکس.
+  */
+  .monitor-hotspot {
+    top: 72px !important;
+    right: 20% !important;
+
+    width: 60% !important;
+    height: 185px !important;
+
+    border-radius: 4px !important;
+
+    transform:
+      perspective(900px)
+      rotateY(-1.5deg)
+      rotateZ(-0.4deg)
+      !important;
+  }
+
+  .monitor-logo {
+    padding: 5% !important;
+  }
+
+  .monitor-logo img {
+    width: 84% !important;
+  }
+
+  .monitor-logo small {
+    font-size: 7px !important;
+  }
+
+  .mobile-monitor-hint {
+    top: 345px !important;
+    background: rgba(3,7,18,0.68) !important;
+  }
+}
+
+
+/* گوشی‌های کوچک */
+@media (max-width: 390px) {
+
+  .hero::before {
+    background-size: auto 365px !important;
+  }
+
+  .hero-inner {
+    padding-top: 365px !important;
+  }
+
+  .monitor-hotspot {
+    top: 67px !important;
+    right: 19% !important;
+    width: 62% !important;
+    height: 174px !important;
+  }
+
+  .mobile-monitor-hint {
+    top: 320px !important;
+  }
+}

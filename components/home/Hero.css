@@ -1,0 +1,825 @@
+---.tarhna-header {
+  position: relative;
+  z-index: 50;
+  background: rgba(3, 7, 22, 0.94);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  width: min(1180px, calc(100% - 32px));
+  min-height: 76px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  width: 118px;
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 8px rgba(190, 70, 255, .55))
+    drop-shadow(0 0 14px rgba(50, 120, 255, .28));
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.desktop-nav a {
+  color: #e8e9f2;
+  text-decoration: none;
+  font-size: 14px;
+  transition: .25s ease;
+}
+
+.desktop-nav a:hover {
+  color: #c084fc;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-btn {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  padding: 10px 16px;
+  border-radius: 11px;
+  border: 1px solid rgba(168, 85, 247, .45);
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, .24),
+    rgba(37, 99, 235, .12)
+  );
+}
+
+.mobile-menu {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, .3);
+  background: #080d20;
+  color: white;
+  font-size: 21px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 20%, rgba(94, 44, 190, .18), transparent 35%),
+    radial-gradient(circle at 20% 65%, rgba(28, 72, 170, .13), transparent 38%),
+    #02040c;
+  color: white;
+  min-height: 650px;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.hero-glow-one {
+  width: 360px;
+  height: 360px;
+  background: rgba(126, 34, 206, .13);
+  right: -100px;
+  top: 60px;
+}
+
+.hero-glow-two {
+  width: 300px;
+  height: 300px;
+  background: rgba(37, 99, 235, .1);
+  left: -100px;
+  bottom: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1240px, calc(100% - 40px));
+  margin: auto;
+  display: grid;
+  grid-template-columns: .9fr 1.25fr;
+  align-items: center;
+  gap: 34px;
+  padding: 48px 0 54px;
+}
+
+/* TEXT */
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-badge {
+  display: inline-flex;
+  padding: 9px 15px;
+  margin-bottom: 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, .35);
+  background: rgba(126, 34, 206, .11);
+  color: #d8b4fe;
+  font-size: 13px;
+}
+
+.hero-content h1 {
+  margin: 0;
+  max-width: 520px;
+  font-size: clamp(38px, 4.2vw, 67px);
+  line-height: 1.3;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.hero-content h1 span {
+  display: block;
+  background: linear-gradient(90deg, #a855f7, #6366f1, #e879f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-description {
+  max-width: 530px;
+  margin: 20px 0 0;
+  color: #aeb3c4;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.primary-btn,
+.secondary-btn {
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.primary-btn {
+  background: linear-gradient(100deg, #6d28d9, #9333ea, #7c3aed);
+  box-shadow: 0 8px 35px rgba(126, 34, 206, .28);
+}
+
+.secondary-btn {
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(8, 13, 32, .68);
+}
+
+.hero-features {
+  margin-top: 31px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.hero-features > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hero-features b {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #d8b4fe;
+  border: 1px solid rgba(168,85,247,.24);
+  background: rgba(126,34,206,.1);
+}
+
+.hero-features span {
+  color: #777f94;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.hero-features strong {
+  display: block;
+  color: #eef0f8;
+  font-size: 11px;
+}
+
+/* REAL WORKSPACE */
+
+.hero-visual {
+  position: relative;
+}
+
+.workspace {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 26px;
+  isolation: isolate;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.55),
+    0 0 50px rgba(103, 46, 220, .12);
+}
+
+.workspace::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(2,4,12,.18), transparent 32%),
+    linear-gradient(0deg, rgba(2,4,12,.16), transparent 30%);
+}
+
+.workspace-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/*
+  CLICKABLE REAL MONITOR
+  Coordinates match tarhna-hero.png.
+*/
+
+.real-monitor {
+  position: absolute;
+  z-index: 6;
+
+  top: 23.5%;
+  left: 39.5%;
+  width: 48%;
+  height: 31%;
+
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+
+  border: 0;
+  border-radius: 2.5%;
+  background: #01030a;
+
+  transform:
+    perspective(900px)
+    rotateY(-2deg)
+    rotateZ(-0.4deg);
+
+  box-shadow:
+    inset 0 0 25px rgba(0,0,0,.9),
+    0 0 16px rgba(96,48,210,.22);
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.screen-darkness {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 50% 50%, #10143a 0%, #050716 48%, #010207 100%);
+  transition: 1s ease;
+}
+
+.real-monitor.is-off .screen-darkness {
+  background: #000;
+}
+
+.screen-light {
+  position: absolute;
+  z-index: 2;
+  inset: 10% 12%;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse,
+    rgba(165, 70, 255, .45),
+    rgba(52, 91, 255, .16) 43%,
+    transparent 72%
+  );
+}
+
+.real-monitor.is-on .screen-light {
+  animation: screenWake 2.3s cubic-bezier(.22,.8,.28,1) forwards;
+}
+
+.screen-logo {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transform: scale(.92);
+  animation: logoWake 2.7s cubic-bezier(.16,1,.3,1) .45s forwards;
+}
+
+.screen-logo img {
+  width: 72%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    brightness(1.1)
+    drop-shadow(0 0 8px rgba(235, 70, 255, .7))
+    drop-shadow(0 0 18px rgba(55, 110, 255, .55));
+}
+
+.screen-logo small {
+  margin-top: -1%;
+  color: rgba(235, 238, 255, .78);
+  font-size: clamp(6px, .7vw, 11px);
+  letter-spacing: .2px;
+}
+
+.monitor-hint {
+  position: absolute;
+  z-index: 10;
+  right: 5%;
+  bottom: 4%;
+  padding: 7px 12px;
+  border: 1px solid rgba(192,132,252,.18);
+  border-radius: 999px;
+  background: rgba(3,7,18,.66);
+  color: rgba(230,230,245,.72);
+  font-size: 9px;
+  backdrop-filter: blur(8px);
+}
+
+@keyframes screenWake {
+  0% {
+    opacity: 0;
+    transform: scale(.65);
+  }
+  45% {
+    opacity: .25;
+  }
+  100% {
+    opacity: .72;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes logoWake {
+  0% {
+    opacity: 0;
+    transform: scale(.92);
+    filter: blur(7px);
+  }
+
+  35% {
+    opacity: .12;
+    filter: blur(4px);
+  }
+
+  70% {
+    opacity: .75;
+    transform: scale(.985);
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .desktop-nav,
+  .account-btn {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .header-inner {
+    min-height: 70px;
+  }
+
+  .header-logo {
+    width: 105px;
+  }
+
+  .hero-inner {
+    width: min(700px, calc(100% - 28px));
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 26px;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-content h1,
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-features {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .header-inner {
+    width: calc(100% - 30px);
+  }
+
+  .brand {
+    order: 2;
+  }
+
+  .header-actions {
+    order: 1;
+  }
+
+  .header-logo {
+    width: 94px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-inner {
+    width: calc(100% - 24px);
+    padding: 20px 0 42px;
+    gap: 30px;
+  }
+
+  .workspace {
+    border-radius: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(34px, 10.4vw, 48px);
+    line-height: 1.35;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .hero-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .hero-features > div {
+    padding: 9px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.06);
+    background: rgba(8,13,32,.4);
+  }
+
+  .monitor-hint {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 3%;
+    max-width: 90%;
+    white-space: nowrap;
+    font-size: 7px;
+    padding: 5px 8px;
+  }
+
+  .screen-logo img {
+    width: 76%;
+  }
+
+  .screen-logo small {
+    font-size: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen-logo,
+  .real-monitor.is-on .screen-light {
+    animation-duration: .01ms !important;
+    animation-delay: 0ms !important;
+  }
+}
+/* =========================================
+   FINAL MONITOR PERSPECTIVE CALIBRATION
+   ========================================= */
+
+.real-monitor {
+  position: absolute !important;
+
+  /* محل سطح واقعی نمایشگر روی عکس Hero */
+  left: 39.2% !important;
+  top: 23.2% !important;
+  width: 48.4% !important;
+  height: 31.8% !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  overflow: hidden !important;
+  cursor: pointer;
+
+  /*
+    شکل صفحه مطابق پرسپکتیو مانیتور:
+    بالا-چپ، بالا-راست، پایین-راست، پایین-چپ
+  */
+  clip-path: polygon(
+    3.5% 4%,
+    98% 0%,
+    96.5% 96%,
+    0% 100%
+  ) !important;
+
+  transform: none !important;
+  transform-origin: center center !important;
+
+  background: #020207 !important;
+
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.95),
+    inset 0 0 12px rgba(103, 55, 255, 0.10) !important;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* صفحه خاموش */
+.real-monitor .screen-darkness {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+
+  background:
+    radial-gradient(
+      ellipse at 52% 48%,
+      #090a18 0%,
+      #04040b 52%,
+      #000 100%
+    ) !important;
+
+  transition:
+    opacity 1.2s cubic-bezier(.22,.8,.28,1),
+    background 1.2s cubic-bezier(.22,.8,.28,1) !important;
+}
+
+.real-monitor.is-off .screen-darkness {
+  opacity: 1 !important;
+  background: #000 !important;
+}
+
+.real-monitor.is-on .screen-darkness {
+  opacity: 0.72 !important;
+}
+
+/* نور داخل خود مانیتور */
+.real-monitor .screen-light {
+  position: absolute !important;
+  inset: 4% 3% !important;
+  z-index: 2 !important;
+
+  border-radius: 35% !important;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(147, 51, 234, 0.34) 0%,
+      rgba(91, 33, 182, 0.17) 36%,
+      rgba(37, 20, 80, 0.06) 62%,
+      transparent 78%
+    ) !important;
+
+  opacity: 0 !important;
+  pointer-events: none !important;
+  filter: blur(8px);
+
+  transition: opacity 1.4s ease !important;
+}
+
+.real-monitor.is-on .screen-light {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* لوگو */
+.real-monitor .screen-logo {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  opacity: 0;
+  transform: scale(0.92);
+  transform-origin: center center;
+
+  animation: monitorLogoFinal 2.4s
+    cubic-bezier(.16, 1, .3, 1)
+    .35s forwards !important;
+
+  pointer-events: none;
+}
+
+/* خود تصویر لوگو */
+.real-monitor .screen-logo img {
+  display: block !important;
+
+  width: 63% !important;
+  max-width: none !important;
+  height: auto !important;
+
+  object-fit: contain !important;
+
+  filter:
+    brightness(1.06)
+    drop-shadow(0 0 5px rgba(210, 90, 255, .65))
+    drop-shadow(0 0 13px rgba(79, 70, 229, .48)) !important;
+}
+
+/* نوشته زیر لوگو */
+.real-monitor .screen-logo small {
+  margin-top: -1% !important;
+  font-size: clamp(5px, .7vw, 10px) !important;
+  color: rgba(235, 238, 255, .72) !important;
+  letter-spacing: .2px;
+}
+
+/* خاموش */
+.real-monitor.is-off .screen-logo {
+  display: none !important;
+}
+
+/* روشن شدن نرم */
+@keyframes monitorLogoFinal {
+  0% {
+    opacity: 0;
+    transform: scale(.92);
+    filter: brightness(.55);
+  }
+
+  35% {
+    opacity: .18;
+  }
+
+  70% {
+    opacity: .78;
+    transform: scale(.985);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/*
+  چون مختصات درصدی هستند، در موبایل هم
+  صفحه همراه با خود عکس Hero کوچک می‌شود.
+*/
+@media (max-width: 700px) {
+  .real-monitor {
+    left: 39.2% !important;
+    top: 23.2% !important;
+    width: 48.4% !important;
+    height: 31.8% !important;
+  }
+
+  .real-monitor .screen-logo img {
+    width: 63% !important;
+  }
+
+  .real-monitor .screen-logo small {
+    font-size: 5px !important;
+  }
+}
+/* ===== SEAMLESS HERO IMAGE ===== */
+
+.hero-visual {
+  position: relative;
+  overflow: visible;
+}
+
+.workspace {
+  position: relative;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.workspace-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 8%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 8%, #000 86%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(105, 42, 220, 0.16) 0%,
+    rgba(38, 16, 90, 0.08) 42%,
+    transparent 72%
+  );
+}
+
+@media (max-width: 760px) {
+  .workspace-image {
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 5%, #000 88%, transparent 100%);
+    -webkit-mask-composite: source-in;
+
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 5%, #000 88%, transparent 100%);
+    mask-composite: intersect;
+  }
+}
