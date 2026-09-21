@@ -90,3 +90,29 @@ export async function POST(request: Request) {
     );
   }
 }
+export async function GET() {
+  try {
+    const orders = await prisma.order.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+      take: 20,
+    });
+
+    return NextResponse.json({
+      success: true,
+      count: orders.length,
+      orders,
+    });
+  } catch (error) {
+    console.error("ORDER_GET_ERROR:", error);
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: "خطا در دریافت سفارش‌ها",
+      },
+      { status: 500 }
+    );
+  }
+}
