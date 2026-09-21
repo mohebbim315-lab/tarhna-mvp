@@ -30,6 +30,7 @@ model User {
   wallet        CreditWallet?
   generations   Generation[]
   payments      Payment[]
+orders        Order[]
   galleryPosts  GalleryPost[]
   likes         GalleryLike[]
   referralsSent Referral[]          @relation("referrer")
@@ -113,4 +114,43 @@ model Referral {
   createdAt   DateTime @default(now())
   referrer    User     @relation("referrer", fields: [referrerId], references: [id], onDelete: Cascade)
   referred    User     @relation("referred", fields: [referredId], references: [id], onDelete: Cascade)
+}
+enum OrderStatus {
+  PENDING
+  REVIEWING
+  ACCEPTED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  orderCode       String      @unique
+
+  userId          String?
+  user            User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  serviceId       String
+  qualityId       String
+  quantity        Int         @default(1)
+
+  description     String?
+  priority        String?
+  usage           String?
+  size            String?
+  format          String?
+  style           String?
+  deadline        String?
+
+  calculatedPrice Int?
+
+  status          OrderStatus @default(PENDING)
+
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
 }
