@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import "./mobile-polish.css";
 
 type Order = {
   id: string;
