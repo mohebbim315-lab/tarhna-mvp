@@ -593,7 +593,12 @@ export default function OrdersPage() {
                           type="button"
                           className="details-button"
                         >
-                          مشاهده جزئیات
+                          <Link
+  href={`/orders/${order.orderCode}`}
+  className="details-button"
+>
+  <span>مشاهده جزئیات</span>
+</Link>
                           <span>←</span>
                         </button>
                       </div>

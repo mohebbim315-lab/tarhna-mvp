@@ -1,0 +1,1384 @@
+/* ========================================
+   TARHNA - ORDER DETAILS
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.order-details-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(
+      circle at 78% 8%,
+      rgba(117, 54, 255, 0.14),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 5% 60%,
+      rgba(26, 86, 255, 0.08),
+      transparent 28%
+    ),
+    #050817;
+  color: #ffffff;
+}
+
+.details-container {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.details-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: 0.28;
+}
+
+.details-glow-one {
+  width: 320px;
+  height: 320px;
+  top: 150px;
+  right: -140px;
+  background: #7436ff;
+}
+
+.details-glow-two {
+  width: 280px;
+  height: 280px;
+  top: 800px;
+  left: -150px;
+  background: #175cff;
+}
+
+
+/* ---------- هدر ---------- */
+
+.details-header {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.details-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.details-logo {
+  display: block;
+  width: auto;
+  height: 48px;
+  object-fit: contain;
+}
+
+.back-button {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  color: #c5cae0;
+  background: rgba(255, 255, 255, 0.035);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.back-button span {
+  color: #a77cff;
+  font-size: 17px;
+}
+
+
+/* ---------- عنوان سفارش ---------- */
+
+.details-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 48px 0 27px;
+}
+
+.details-eyebrow {
+  display: inline-flex;
+  padding: 7px 12px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(145, 83, 255, 0.22);
+  border-radius: 999px;
+  color: #b08aff;
+  background: rgba(119, 59, 255, 0.08);
+  font-size: 12px;
+}
+
+.details-heading h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.5;
+}
+
+.heading-code {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.heading-code span {
+  color: #777f9d;
+  font-size: 12px;
+}
+
+.heading-code strong {
+  direction: ltr;
+  color: #cdd1e1;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.details-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.details-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.status-pending,
+.status-reviewing {
+  color: #ffc759;
+  background: rgba(255, 185, 55, 0.09);
+}
+
+.status-accepted,
+.status-progress {
+  color: #6aa9ff;
+  background: rgba(70, 139, 255, 0.09);
+}
+
+.status-completed {
+  color: #5be3a6;
+  background: rgba(53, 211, 142, 0.09);
+}
+
+.status-cancelled {
+  color: #ff707e;
+  background: rgba(255, 80, 100, 0.09);
+}
+
+
+/* ---------- کارت وضعیت ---------- */
+
+.status-card {
+  padding: 23px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(139, 77, 255, 0.14);
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(115, 57, 255, 0.09),
+      rgba(255, 255, 255, 0.018)
+    );
+}
+
+.status-card-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-symbol {
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  color: #ae86ff;
+  background: rgba(119, 60, 255, 0.12);
+  font-size: 22px;
+}
+
+.status-card-top > div:last-child {
+  min-width: 0;
+}
+
+.status-card-top span {
+  display: block;
+  color: #7f87a3;
+  font-size: 11px;
+}
+
+.status-card-top h2 {
+  margin: 4px 0;
+  font-size: 19px;
+}
+
+.status-card-top p {
+  margin: 0;
+  color: #8b93ae;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.status-progress {
+  margin-top: 20px;
+}
+
+.status-progress-track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.status-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6335ff, #a942ff);
+  box-shadow: 0 0 16px rgba(133, 67, 255, 0.4);
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 9px;
+}
+
+.progress-labels span {
+  color: #727b99;
+  font-size: 10px;
+}
+
+
+/* ---------- چیدمان اصلی ---------- */
+
+.details-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 18px;
+  align-items: start;
+}
+
+.details-main {
+  display: grid;
+  gap: 18px;
+}
+
+.details-sidebar {
+  display: grid;
+  gap: 14px;
+}
+
+
+/* ---------- کارت عمومی ---------- */
+
+.details-card,
+.summary-card,
+.files-card,
+.support-card {
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(11, 16, 38, 0.76);
+  backdrop-filter: blur(15px);
+}
+
+.details-card {
+  padding: 22px;
+  border-radius: 22px;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 19px;
+}
+
+.card-icon {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  color: #ad84ff;
+  background: rgba(117, 58, 255, 0.1);
+  font-size: 17px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.card-heading p {
+  margin: 4px 0 0;
+  color: #747d9a;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+
+/* ---------- اطلاعات سفارش ---------- */
+
+.information-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.information-item {
+  min-width: 0;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.information-item:nth-child(odd) {
+  border-left: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.information-item:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.information-item span {
+  display: block;
+  margin-bottom: 6px;
+  color: #747d99;
+  font-size: 11px;
+}
+
+.information-item strong {
+  display: block;
+  color: #e0e3ed;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* ---------- توضیحات ---------- */
+
+.description-box {
+  min-height: 100px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 15px;
+  color: #c3c8da;
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.style-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 12px;
+  padding: 13px 15px;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.style-row span {
+  color: #747d99;
+  font-size: 11px;
+}
+
+.style-row strong {
+  color: #b48eff;
+  font-size: 13px;
+}
+/* ---------- خلاصه سفارش ---------- */
+
+.summary-card {
+  padding: 19px;
+  border-radius: 20px;
+}
+
+.summary-heading {
+  padding-bottom: 14px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.summary-heading span {
+  display: block;
+  margin-bottom: 6px;
+  color: #7b84a0;
+  font-size: 11px;
+}
+
+.summary-heading strong {
+  display: block;
+  direction: ltr;
+  text-align: right;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary-row span {
+  flex: 0 0 auto;
+  color: #747d99;
+  font-size: 11px;
+}
+
+.summary-row strong {
+  color: #d5d9e8;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.summary-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.summary-price span {
+  color: #858da8;
+  font-size: 12px;
+}
+
+.summary-price strong {
+  color: #b48aff;
+  font-size: 16px;
+}
+
+
+/* ---------- فایل‌های سفارش ---------- */
+
+.files-card {
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.sidebar-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 15px;
+}
+
+.sidebar-icon {
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #a981ff;
+  background: rgba(117, 58, 255, 0.1);
+  font-size: 16px;
+}
+
+.sidebar-card-heading strong {
+  display: block;
+  font-size: 13px;
+}
+
+.sidebar-card-heading span {
+  display: block;
+  margin-top: 3px;
+  color: #6f7894;
+  font-size: 10px;
+}
+
+.empty-files {
+  padding: 22px 12px;
+  border: 1px dashed rgba(143, 91, 255, 0.18);
+  border-radius: 15px;
+  background: rgba(118, 58, 255, 0.025);
+  text-align: center;
+}
+
+.empty-files > div {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 11px;
+  border-radius: 13px;
+  color: #a77cff;
+  background: rgba(119, 59, 255, 0.1);
+  font-size: 20px;
+}
+
+.empty-files strong {
+  display: block;
+  color: #cdd1df;
+  font-size: 11px;
+}
+
+.empty-files p {
+  margin: 7px 0 0;
+  color: #6f7894;
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+
+/* ---------- پشتیبانی ---------- */
+
+.support-card {
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.support-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  color: #ae87ff;
+  background: rgba(117, 58, 255, 0.1);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.support-card strong {
+  display: block;
+  font-size: 13px;
+}
+
+.support-card p {
+  margin: 6px 0 14px;
+  color: #747d99;
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+.support-card button {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid rgba(139, 76, 255, 0.18);
+  border-radius: 12px;
+  color: #b28cff;
+  background: rgba(118, 57, 255, 0.08);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+/* ---------- تایم‌لاین ---------- */
+
+.order-timeline {
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 22px;
+  background: rgba(11, 16, 38, 0.76);
+}
+
+.timeline-heading {
+  margin-bottom: 19px;
+}
+
+.timeline-heading > span {
+  display: block;
+  margin-bottom: 4px;
+  color: #9870ef;
+  font-size: 11px;
+}
+
+.timeline-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.timeline-item {
+  position: relative;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.018);
+  opacity: 0.55;
+}
+
+.timeline-item.timeline-active {
+  border-color: rgba(137, 76, 255, 0.18);
+  background: rgba(117, 58, 255, 0.055);
+  opacity: 1;
+}
+
+.timeline-number {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 11px;
+  border-radius: 10px;
+  color: #737c98;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.timeline-active .timeline-number {
+  color: #ffffff;
+  background: linear-gradient(135deg, #6435ff, #9f42ff);
+  box-shadow: 0 0 20px rgba(121, 60, 255, 0.18);
+}
+
+.timeline-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #d9dce8;
+  font-size: 12px;
+}
+
+.timeline-item > div:last-child > span {
+  display: block;
+  color: #717a97;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+
+/* ---------- دکمه‌های پایین ---------- */
+
+.details-bottom-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.bottom-back,
+.repeat-order {
+  min-height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  border-radius: 13px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bottom-back {
+  color: #bec4d8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.repeat-order {
+  color: #ffffff;
+  background: linear-gradient(135deg, #6234ff, #a342ff);
+  box-shadow: 0 10px 30px rgba(112, 52, 255, 0.16);
+}
+
+
+/* ---------- Loading / Error ---------- */
+
+.details-state {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.details-loader {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  border-top-color: #9658ff;
+  border-radius: 50%;
+  animation: detailsRotate 0.8s linear infinite;
+}
+
+@keyframes detailsRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.details-state-icon {
+  width: 66px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(142, 76, 255, 0.2);
+  border-radius: 20px;
+  color: #ac82ff;
+  background: rgba(117, 58, 255, 0.08);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.details-state h1 {
+  margin: 18px 0 6px;
+  font-size: 21px;
+}
+
+.details-state p {
+  max-width: 440px;
+  margin: 0;
+  color: #747d9a;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.state-button {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 19px;
+  padding: 0 19px;
+  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6335ff, #a342ff);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+/* ========================================
+   MOBILE RESPONSIVE
+   ======================================== */
+
+@media (max-width: 800px) {
+
+  .details-container {
+    width: calc(100% - 24px);
+    max-width: 650px;
+    padding-bottom: 45px;
+  }
+
+
+  /* ---------- هدر موبایل ---------- */
+
+  .details-header {
+    min-height: 68px;
+  }
+
+  .details-logo {
+    height: 42px;
+    max-width: 135px;
+  }
+
+  .back-button {
+    min-height: 39px;
+    padding: 0 12px;
+    border-radius: 11px;
+    font-size: 12px;
+  }
+
+  .back-button span {
+    font-size: 16px;
+  }
+
+
+  /* ---------- عنوان ---------- */
+
+  .details-heading {
+    align-items: flex-start;
+    padding: 29px 0 21px;
+    gap: 12px;
+  }
+
+  .details-eyebrow {
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
+
+  .details-heading h1 {
+    font-size: 27px;
+    line-height: 1.5;
+  }
+
+  .heading-code {
+    flex-wrap: wrap;
+    margin-top: 7px;
+  }
+
+  .heading-code span {
+    font-size: 11px;
+  }
+
+  .heading-code strong {
+    font-size: 13px;
+  }
+
+  .details-status {
+    margin-top: 4px;
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+
+  /* ---------- وضعیت ---------- */
+
+  .status-card {
+    padding: 17px;
+    margin-bottom: 14px;
+    border-radius: 18px;
+  }
+
+  .status-card-top {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .status-symbol {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+    border-radius: 13px;
+    font-size: 19px;
+  }
+
+  .status-card-top span {
+    font-size: 11px;
+  }
+
+  .status-card-top h2 {
+    margin: 3px 0;
+    font-size: 17px;
+  }
+
+  .status-card-top p {
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  .status-progress {
+    margin-top: 17px;
+  }
+
+  .status-progress-track {
+    height: 6px;
+  }
+
+  .progress-labels {
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .progress-labels span {
+    font-size: 9px;
+  }
+
+
+  /* ---------- چیدمان ---------- */
+
+  .details-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .details-main,
+  .details-sidebar {
+    width: 100%;
+    gap: 14px;
+  }
+
+
+  /* ---------- کارت‌ها ---------- */
+
+  .details-card {
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .card-heading {
+    gap: 11px;
+    margin-bottom: 16px;
+  }
+
+  .card-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    border-radius: 12px;
+    font-size: 17px;
+  }
+
+  .card-heading h2 {
+    font-size: 16px;
+  }
+
+  .card-heading p {
+    margin-top: 3px;
+    font-size: 11px;
+  }
+
+
+  /* ---------- مشخصات ---------- */
+
+  .information-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-radius: 14px;
+  }
+
+  .information-item {
+    padding: 13px 11px;
+  }
+
+  .information-item span {
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+
+  .information-item strong {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+
+  /* ---------- توضیحات ---------- */
+
+  .description-box {
+    min-height: 90px;
+    padding: 14px;
+    border-radius: 13px;
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .style-row {
+    padding: 12px 13px;
+  }
+
+  .style-row span {
+    font-size: 11px;
+  }
+
+  .style-row strong {
+    font-size: 13px;
+  }
+
+
+  /* ---------- خلاصه ---------- */
+
+  .summary-card {
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .summary-heading span {
+    font-size: 11px;
+  }
+
+  .summary-heading strong {
+    font-size: 14px;
+  }
+
+  .summary-row {
+    padding: 13px 0;
+  }
+
+  .summary-row span {
+    font-size: 11px;
+  }
+
+  .summary-row strong {
+    font-size: 12px;
+  }
+
+  .summary-price {
+    padding-top: 15px;
+  }
+
+  .summary-price span {
+    font-size: 12px;
+  }
+
+  .summary-price strong {
+    font-size: 17px;
+  }
+
+
+  /* ---------- فایل‌ها ---------- */
+
+  .files-card {
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .sidebar-card-heading strong {
+    font-size: 14px;
+  }
+
+  .sidebar-card-heading span {
+    font-size: 10px;
+  }
+
+  .empty-files {
+    padding: 20px 13px;
+  }
+
+  .empty-files strong {
+    font-size: 12px;
+  }
+
+  .empty-files p {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+
+
+  /* ---------- پشتیبانی ---------- */
+
+  .support-card {
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .support-card strong {
+    font-size: 14px;
+  }
+
+  .support-card p {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+
+  .support-card button {
+    min-height: 44px;
+    font-size: 12px;
+  }
+
+
+  /* ---------- تایم‌لاین ---------- */
+
+  .order-timeline {
+    margin-top: 14px;
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .timeline-heading {
+    margin-bottom: 15px;
+  }
+
+  .timeline-heading > span {
+    font-size: 11px;
+  }
+
+  .timeline-heading h2 {
+    font-size: 17px;
+  }
+
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .timeline-number {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    margin: 0;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .timeline-item strong {
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .timeline-item > div:last-child > span {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+
+  /* ---------- دکمه‌های پایین ---------- */
+
+  .details-bottom-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  .bottom-back,
+  .repeat-order {
+    min-height: 45px;
+    padding: 0 10px;
+    border-radius: 12px;
+    font-size: 11px;
+  }
+
+
+  /* ---------- خطا و لودینگ ---------- */
+
+  .details-state {
+    min-height: 70vh;
+  }
+
+  .details-state h1 {
+    font-size: 20px;
+  }
+
+  .details-state p {
+    font-size: 12px;
+  }
+
+  .state-button {
+    min-height: 44px;
+    font-size: 12px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 430px) {
+
+  .details-container {
+    width: calc(100% - 20px);
+  }
+
+  .details-header {
+    min-height: 64px;
+  }
+
+  .details-logo {
+    height: 38px;
+    max-width: 120px;
+  }
+
+  .back-button {
+    min-height: 37px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+
+  /* ---------- عنوان ---------- */
+
+  .details-heading {
+    padding-top: 24px;
+  }
+
+  .details-heading h1 {
+    font-size: 24px;
+  }
+
+  .details-eyebrow {
+    font-size: 10px;
+  }
+
+  .heading-code span {
+    font-size: 10px;
+  }
+
+  .heading-code strong {
+    font-size: 12px;
+  }
+
+  .details-status {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+
+  /* ---------- وضعیت ---------- */
+
+  .status-card {
+    padding: 15px;
+  }
+
+  .status-symbol {
+    width: 41px;
+    height: 41px;
+    flex-basis: 41px;
+  }
+
+  .status-card-top span {
+    font-size: 10px;
+  }
+
+  .status-card-top h2 {
+    font-size: 16px;
+  }
+
+  .status-card-top p {
+    font-size: 11px;
+  }
+
+  .progress-labels span {
+    font-size: 8px;
+  }
+
+
+  /* ---------- کارت اطلاعات ---------- */
+
+  .details-card {
+    padding: 15px;
+  }
+
+  .card-heading h2 {
+    font-size: 15px;
+  }
+
+  .card-heading p {
+    font-size: 10px;
+  }
+
+  .information-item {
+    padding: 12px 9px;
+  }
+
+  .information-item span {
+    font-size: 10px;
+  }
+
+  .information-item strong {
+    font-size: 12px;
+  }
+
+  .description-box {
+    font-size: 12px;
+  }
+
+
+  /* ---------- خلاصه ---------- */
+
+  .summary-row span {
+    font-size: 10px;
+  }
+
+  .summary-row strong {
+    font-size: 11px;
+  }
+
+  .summary-price strong {
+    font-size: 16px;
+  }
+
+
+  /* ---------- تایم‌لاین ---------- */
+
+  .timeline-item {
+    padding: 12px;
+  }
+
+  .timeline-item strong {
+    font-size: 12px;
+  }
+
+  .timeline-item > div:last-child > span {
+    font-size: 10px;
+  }
+
+
+  /* ---------- دکمه‌ها ---------- */
+
+  .details-bottom-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-back,
+  .repeat-order {
+    width: 100%;
+    min-height: 44px;
+    font-size: 12px;
+  }
+}
+
+
+/* ========================================
+   TOUCH DEVICES
+   ======================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .back-button,
+  .support-card button,
+  .bottom-back,
+  .repeat-order,
+  .state-button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .back-button:active,
+  .support-card button:active,
+  .bottom-back:active,
+  .repeat-order:active {
+    transform: scale(0.98);
+  }
+}
