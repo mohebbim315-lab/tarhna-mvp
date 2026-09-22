@@ -694,7 +694,7 @@ async function handleSubmitOrder() {
       </div>
 
       <div className="success-modal-actions">
-        <Link href="/dashboard" className="success-primary-button">
+        <Link href="/orders" className="success-primary-button">
           مشاهده سفارش‌های من
         </Link>
 
